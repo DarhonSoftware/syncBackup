@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=syncBackup
+GenericName=Backup Tool
+Encoding=UTF-8
+Comment=Front-end for rsync
+Exec=syncbackup.sh
+Icon=com.darhon.syncbackup
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Utility;

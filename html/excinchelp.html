@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.2.2.2 (Linux)"/>
+	<meta name="created" content="2021-12-04T14:59:41.547785261"/>
+	<meta name="changed" content="2021-12-06T09:26:17.227739087"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent; background: transparent }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+		a:visited { color: #800000; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-AU" link="#000080" vlink="#800000" dir="ltr">
+<ol>
+	<li><p style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><font face="Ubuntu">If
+	the pattern starts with a </font><font face="Ubuntu"><b>/</b></font>
+	<font face="Ubuntu">then it is anchored to a particular spot in the
+	hierarchy of files, otherwise it is matched against the end of the
+	pathname.</font> </font>
+	</p>
+	<li><p style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><font face="Ubuntu">If
+	the pattern ends with a </font><font face="Ubuntu"><b>/</b></font>
+	<font face="Ubuntu">then it will only match a directory, not a
+	regular file, symlink, or device.</font> </font>
+	</p>
+	<li><p style="margin-bottom: 0cm"><font face="Ubuntu"><font size="2" style="font-size: 10pt">syncBackup
+	chooses between doing a simple string match and wildcard matching by
+	checking if the pattern contains one of these three wildcard
+	characters: '*', '?', and '[' .</font></font></p>
+</ol>
+<ul>
+	<li><p style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><font face="Ubuntu"><b>'*'</b></font>
+	<font face="Ubuntu">matches any path component, but it stops at
+	slashes.</font> </font>
+	</p>
+	<li><p style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><font face="Ubuntu"><b>'**'</b></font>
+	<font face="Ubuntu">matches anything, including slashes.</font> </font>
+	</p>
+	<li><p style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><font face="Ubuntu"><b>'?'</b></font>
+	<font face="Ubuntu">matches any character except a slash (/).</font>
+	</font>
+	</p>
+	<li><p style="margin-bottom: 0cm"><font face="Ubuntu"><font size="2" style="font-size: 10pt"><b>'['</b>
+	introduces a character class, such as [a-z] or [[:alpha:]].</font></font></p>
+</ul>
+<p align="justify" style="margin-top: 0.32cm; margin-bottom: 0.32cm"><font face="Ubuntu"><font size="2" style="font-size: 10pt"><br/>
+Here
+are some examples of exclude/include matching:</font></font></p>
+<ul>
+	<li><p style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><font face="Ubuntu">exclude
+	</font><font face="Ubuntu"><b>*.o</b></font> <font face="Ubuntu">would
+	exclude all names matching </font><font face="Ubuntu"><b>*.o</b></font>
+	</font>
+	</p>
+	<li><p style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><font face="Ubuntu">exclude
+	</font><font face="Ubuntu"><b>/foo</b></font> <font face="Ubuntu">would
+	exclude a file (or directory) named </font><font face="Ubuntu"><b>foo</b></font>
+	<font face="Ubuntu">in the transfer-root directory</font> </font>
+	</p>
+	<li><p style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><font face="Ubuntu">exclude
+	</font><font face="Ubuntu"><b>foo/</b></font> <font face="Ubuntu">would
+	exclude any directory named </font><font face="Ubuntu"><b>foo</b></font>
+	</font>
+	</p>
+	<li><p style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><font face="Ubuntu">exclude
+	</font><font face="Ubuntu"><b>/foo/*/bar</b></font> <font face="Ubuntu">would
+	exclude any file named </font><font face="Ubuntu"><b>bar</b></font>
+	<font face="Ubuntu">which is at two levels below a directory named
+	</font><font face="Ubuntu"><b>foo</b></font> <font face="Ubuntu">in
+	the transfer-root directory</font> </font>
+	</p>
+	<li><p style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><font face="Ubuntu">exclude
+	</font><font face="Ubuntu"><b>/foo/**/bar</b></font> <font face="Ubuntu">would
+	exclude any file named </font><font face="Ubuntu"><b>bar</b></font>
+	<font face="Ubuntu">two or more levels below a directory named </font><font face="Ubuntu"><b>foo</b></font>
+	<font face="Ubuntu">in the transfer-root directory</font> </font>
+	</p>
+	<li><p style="margin-bottom: 0cm"><font size="2" style="font-size: 10pt"><font face="Ubuntu">The
+	combination of include </font><font face="Ubuntu"><b>*/</b></font><font face="Ubuntu">,
+	include </font><font face="Ubuntu"><b>*.c</b></font><font face="Ubuntu">,
+	and exclude </font><font face="Ubuntu"><b>*</b></font> <font face="Ubuntu">would
+	include all directories and C source files but nothing else</font> </font>
+	</p>
+	<li><p style="margin-bottom: 0cm"><font face="Ubuntu"><font size="2" style="font-size: 10pt">The
+	combination of include </font></font><font face="Ubuntu"><font size="2" style="font-size: 10pt"><b>foo/</b></font></font><font face="Ubuntu"><font size="2" style="font-size: 10pt">,
+	include </font></font><font face="Ubuntu"><font size="2" style="font-size: 10pt"><b>foo/bar.c</b></font></font><font face="Ubuntu"><font size="2" style="font-size: 10pt">,
+	and exclude </font></font><font face="Ubuntu"><font size="2" style="font-size: 10pt"><b>*</b></font></font>
+	<font face="Ubuntu"><font size="2" style="font-size: 10pt">would
+	include only the </font></font><font face="Ubuntu"><font size="2" style="font-size: 10pt"><b>foo</b></font></font>
+	<font face="Ubuntu"><font size="2" style="font-size: 10pt">directory
+	and </font></font><font face="Ubuntu"><font size="2" style="font-size: 10pt"><b>foo/bar.c</b></font></font></p>
+</ul>
+</body>
+</html>

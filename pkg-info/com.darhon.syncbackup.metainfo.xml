@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.darhon.syncbackup</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <name>syncBackup</name>
+  <summary>Front-end of rsync for backup and mirroring purposes</summary>
+
+  <description>
+    <p>It takes advantage of the delta-transfer algorithm, which reduces the amount of data sent over the network by sending only the differences between the source files and the existing files in the destination.</p>
+    <p>Create custom profiles and save each configuration independently. Simple control of source and destination rules, register directories or files to be skipped, access remote location using SSH protocol and more.</p>
+  </description>
+
+  <launchable type="desktop-id">com.darhon.syncbackup.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://darhon.com/sites/default/files/images/content_slide/syb_screenshot1.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source">https://darhon.com/sites/default/files/images/content_slide/syb_screenshot2.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source">https://darhon.com/sites/default/files/images/content_slide/syb_screenshot3.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source">https://darhon.com/sites/default/files/images/content_slide/syb_screenshot4.png</image>
+    </screenshot>
+  </screenshots>
+  
+  <categories>
+    <category>Utility</category>
+  </categories>
+
+  <url type="homepage">https://darhon.com/syncbackup</url>
+  <project_group>Darhon Software</project_group>
+
+  <provides>
+    <binary>syncbackup</binary>
+  </provides>
+
+  <releases>
+    <release version="2.0" date="2020-12-12"/>
+  </releases>
+</component>

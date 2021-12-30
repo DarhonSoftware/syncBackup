@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>qml/initpage.qml</file>
+        <file>qml/AboutDialog.qml</file>
+        <file>images/about.png</file>
+        <file>images/darhon.png</file>
+        <file>qml/CommandlineDialog.qml</file>
+        <file>qml/HelpDialog.qml</file>
+        <file>qml/settings.qml</file>
+        <file>qml/ExcIncHelpDialog.qml</file>
+        <file>html/excinchelp.html</file>
+        <file>html/help.html</file>
+        <file>qml/SSHDialog.qml</file>
+    </qresource>
+</RCC>
