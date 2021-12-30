@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
-//import QtQuick.Dialogs 1.3
+import QtQuick.Dialogs 1.3
 
 Page {
     id: id_initpage
@@ -106,6 +106,7 @@ Page {
                         Label {
                             id: id_labelFrom
                             anchors.centerIn: parent
+                            color: "white"
                             text: qsTr("SOURCE")
                         }
                     }
@@ -146,12 +147,13 @@ Page {
                         id: id_rectTo
                         border.color: "black"
                         border.width: 1
-                        color: "Tomato"
+                        color: "IndianRed"
                         Layout.preferredWidth: id_labelRef.width*10
                         Layout.preferredHeight: id_buttonBrowseTo.height
                         Label {
                             id: id_labelTo
                             anchors.centerIn: parent
+                            color: "white"
                             text: qsTr("DESTINATION")
                         }
                     }
@@ -222,7 +224,7 @@ Page {
             Layout.fillWidth: true
             visible: backend.del || backend.deleteExcluded || !backend.update
             label: Label {
-                color: "brown"
+                color: "IndianRed"
                 font.bold: true
                 text: " "+qsTr("WARNINGS in current configuration")
             }
@@ -233,17 +235,17 @@ Page {
 
                 Label {
                     visible: backend.del
-                    color: "brown"
+                    color: "IndianRed"
                     text: "- "+qsTr("Delete files in the destination, if they are no longer in the source")
                 }
                 Label {
                     visible: backend.deleteExcluded
-                    color: "brown"
+                    color: "IndianRed"
                     text: "- "+qsTr("Delete files in the destination, if they are marked as excluded in the source")
                 }
                 Label {
                     visible: !backend.update
-                    color: "brown"
+                    color: "IndianRed"
                     text: "- "+qsTr("Replace files in the destination, even if modified time is newer than the source")
                 }
             }
