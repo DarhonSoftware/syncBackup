@@ -2,7 +2,7 @@
 <component type="desktop-application">
   <id>com.darhon.syncbackup</id>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-2.0+</project_license>
+  <project_license>GPL-3.0</project_license>
   <name>syncBackup</name>
   <summary>Front-end of rsync for backup and mirroring purposes</summary>
 
@@ -33,10 +33,10 @@
   </categories>
 
   <url type="homepage">https://darhon.com/syncbackup</url>
-  <project_group>Darhon Software</project_group>
+  <developer_name>Darhon Software</developer_name>
 
   <provides>
-    <binary>syncbackup</binary>
+    <binary>syncbackup.sh</binary>
   </provides>
 
   <releases>

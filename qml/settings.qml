@@ -219,6 +219,8 @@ Page {
                             Layout.preferredWidth: id_group1.width
                             Layout.fillHeight: true
                             border.width: 1
+                            border.color: palette.dark
+                            color: palette.base
                             ListView {
                                 id: id_listExc
                                 anchors.fill: parent
@@ -266,6 +268,8 @@ Page {
                             Layout.fillWidth: true
                             Layout.fillHeight: true
                             border.width: 1
+                            border.color: palette.dark
+                            color: palette.base
                             ListView {
                                 id: id_listInc
                                 anchors.fill: parent
@@ -325,7 +329,7 @@ Page {
                 }
             }
 
-            onClicked: ListView.view.currentIndex=index
+            onPressed: ListView.view.currentIndex=index
             onDoubleClicked: p_editMode=true
 
             Keys.onPressed: {

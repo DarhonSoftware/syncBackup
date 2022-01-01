@@ -32,8 +32,9 @@ Dialog {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.margins: 2
-        border.color: "grey"
+        border.color: palette.dark
         border.width: 1
+        color: palette.base
 
         ScrollView {
             anchors.fill: parent

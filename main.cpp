@@ -20,8 +20,8 @@ int main(int argc, char *argv[])
   //Initiate main objects
   QGuiApplication App(argc, argv);
 
-  //** Handle arguments **//
-  //Default settings to call '/usr/bin/ssh-askpass' setup by the system
+  //Handle arguments
+  //- Default '/usr/bin/ssh-askpass'
   g_sSshAskPass="ssh-askpass";
   for (int i=0;i<argc;i++)
   {

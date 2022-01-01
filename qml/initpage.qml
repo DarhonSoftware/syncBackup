@@ -25,7 +25,8 @@ Page {
                 Layout.preferredWidth: id_labelFile.width+id_labelRef.width*2
                 Layout.alignment: Qt.AlignVCenter
                 border.width: 1
-                color: "silver"
+                border.color: palette.buttonText
+                color: palette.button
                 Label {
                     id: id_labelFile
                     anchors.centerIn: parent
@@ -98,15 +99,14 @@ Page {
                     }
                     Rectangle {
                         id: id_rectFrom
-                        border.color: "black"
+                        border.color: palette.buttonText
                         border.width: 1
-                        color: "CornflowerBlue"
+                        color: palette.button
                         Layout.preferredWidth: id_labelRef.width*10
                         Layout.preferredHeight: id_buttonBrowseFrom.height
                         Label {
                             id: id_labelFrom
                             anchors.centerIn: parent
-                            color: "white"
                             text: qsTr("SOURCE")
                         }
                     }
@@ -145,15 +145,14 @@ Page {
                     }
                     Rectangle {
                         id: id_rectTo
-                        border.color: "black"
+                        border.color: palette.buttonText
                         border.width: 1
-                        color: "IndianRed"
+                        color: palette.button
                         Layout.preferredWidth: id_labelRef.width*10
                         Layout.preferredHeight: id_buttonBrowseTo.height
                         Label {
                             id: id_labelTo
                             anchors.centerIn: parent
-                            color: "white"
                             text: qsTr("DESTINATION")
                         }
                     }
@@ -224,7 +223,6 @@ Page {
             Layout.fillWidth: true
             visible: backend.del || backend.deleteExcluded || !backend.update
             label: Label {
-                color: "IndianRed"
                 font.bold: true
                 text: " "+qsTr("WARNINGS in current configuration")
             }
@@ -235,17 +233,14 @@ Page {
 
                 Label {
                     visible: backend.del
-                    color: "IndianRed"
                     text: "- "+qsTr("Delete files in the destination, if they are no longer in the source")
                 }
                 Label {
                     visible: backend.deleteExcluded
-                    color: "IndianRed"
                     text: "- "+qsTr("Delete files in the destination, if they are marked as excluded in the source")
                 }
                 Label {
                     visible: !backend.update
-                    color: "IndianRed"
                     text: "- "+qsTr("Replace files in the destination, even if modified time is newer than the source")
                 }
             }
@@ -255,8 +250,9 @@ Page {
             id: id_frame4
             Layout.fillHeight: true
             Layout.fillWidth: true
-            border.color: "grey"
+            border.color: palette.dark
             border.width: 1
+            color: palette.base
 
             ScrollView {
                 anchors.fill: parent

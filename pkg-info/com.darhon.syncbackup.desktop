@@ -2,7 +2,7 @@
 Name=syncBackup
 GenericName=Backup Tool
 Encoding=UTF-8
-Comment=Front-end for rsync
+Comment=Front-end of rsync for backup and mirroring purposes
 Exec=syncbackup.sh
 Icon=com.darhon.syncbackup
 StartupNotify=false
