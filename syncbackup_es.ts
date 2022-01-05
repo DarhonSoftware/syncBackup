@@ -155,28 +155,28 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="40"/>
+        <location filename="qml/initpage.qml" line="41"/>
         <source>Load</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="48"/>
+        <location filename="qml/initpage.qml" line="49"/>
         <source>Save As</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="56"/>
+        <location filename="qml/initpage.qml" line="57"/>
         <source>Reset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="87"/>
+        <location filename="qml/initpage.qml" line="88"/>
         <location filename="qml/initpage.qml" line="134"/>
         <source>Local</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="95"/>
+        <location filename="qml/initpage.qml" line="96"/>
         <location filename="qml/initpage.qml" line="142"/>
         <source>Remote</source>
         <translation type="unfinished"></translation>
@@ -187,77 +187,77 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="157"/>
+        <location filename="qml/initpage.qml" line="156"/>
         <source>DESTINATION</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="192"/>
+        <location filename="qml/initpage.qml" line="191"/>
         <source>Run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="202"/>
+        <location filename="qml/initpage.qml" line="201"/>
         <source>Run the process as a trial without making changes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="214"/>
+        <location filename="qml/initpage.qml" line="213"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="229"/>
+        <location filename="qml/initpage.qml" line="227"/>
         <source>WARNINGS in current configuration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="239"/>
+        <location filename="qml/initpage.qml" line="236"/>
         <source>Delete files in the destination, if they are no longer in the source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="244"/>
+        <location filename="qml/initpage.qml" line="240"/>
         <source>Delete files in the destination, if they are marked as excluded in the source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="249"/>
+        <location filename="qml/initpage.qml" line="244"/>
         <source>Replace files in the destination, even if modified time is newer than the source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="274"/>
+        <location filename="qml/initpage.qml" line="270"/>
         <source>Open configuration file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="284"/>
+        <location filename="qml/initpage.qml" line="280"/>
         <source>The configuration file couldn&apos;t be opened, it may not be in the correct format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="293"/>
+        <location filename="qml/initpage.qml" line="289"/>
         <source>Save configuration file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="303"/>
+        <location filename="qml/initpage.qml" line="299"/>
         <source>The configuration file couldn&apos;t be saved</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="312"/>
+        <location filename="qml/initpage.qml" line="308"/>
         <source>Select folder for SOURCE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="324"/>
+        <location filename="qml/initpage.qml" line="320"/>
         <source>Select folder for DESTINATION</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/initpage.qml" line="358"/>
+        <location filename="qml/initpage.qml" line="354"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
@@ -399,18 +399,18 @@
     </message>
     <message>
         <location filename="qml/settings.qml" line="201"/>
-        <location filename="qml/settings.qml" line="248"/>
+        <location filename="qml/settings.qml" line="250"/>
         <source>Insert</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="qml/settings.qml" line="211"/>
-        <location filename="qml/settings.qml" line="258"/>
+        <location filename="qml/settings.qml" line="260"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/settings.qml" line="242"/>
+        <location filename="qml/settings.qml" line="244"/>
         <source>INCLUDED</source>
         <translation type="unfinished"></translation>
     </message>
