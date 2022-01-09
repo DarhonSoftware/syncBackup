@@ -33,6 +33,7 @@
   </categories>
 
   <url type="homepage">https://darhon.com/syncbackup</url>
+  <url type="bugtracker">https://github.com/DarhonSoftware/syncBackup/issues</url>
   <developer_name>Darhon Software</developer_name>
 
   <provides>
