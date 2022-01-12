@@ -15,7 +15,7 @@ void CAbout::init()
   setIconAbout("qrc:/images/about.png");
   setIconBack("qrc:/images/button-back.png");
   setAppName(QString("%1 %2 (Qt - %3)").arg("syncBackup",qApp->applicationVersion(),QT_VERSION_STR));
-  setCaption(tr("Front-end of rsync for backup and mirroring purposes"));
+  setCaption(tr("Backup and mirror your drives"));
   setDescription(tr("It offers the most common options getting most of the power from rsync.")+\
                  "\n"+tr("It takes advantage of the delta-transfer algorithm, which reduces the amount of data sent over the network ")+\
                  tr("by sending only the differences between the source files and the existing files in the destination.")+\
