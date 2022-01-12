@@ -43,6 +43,6 @@
   <content_rating type="oars-1.0" />
 
   <releases>
-    <release version="2.0" date="2020-12-12"/>
+    <release version="2.0.0" date="2020-12-12"/>
   </releases>
 </component>
