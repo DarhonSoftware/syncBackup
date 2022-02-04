@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
   //Setup translations
   QTranslator Translator;
   QString sLanguage = QLocale::system().name().left(2);
-  if (Translator.load(QString("syncbackup_") + sLanguage,":/translations"))
+  if (Translator.load(QString("syncbackup_") + sLanguage,":/i18n"))
     App.installTranslator(&Translator);
 
   //Register QML Object Types
