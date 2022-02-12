@@ -13,7 +13,8 @@
     <name>CAbout</name>
     <message>
         <location filename="about.cpp" line="18"/>
-        <source>Front-end of rsync for backup and mirroring purposes</source>
+        <source>Backup and mirror your drives</source>
+        <oldsource>Front-end of rsync for backup and mirroring purposes</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>

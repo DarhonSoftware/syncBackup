@@ -24,6 +24,6 @@ void CAbout::init()
   setIconDarhon("qrc:/images/darhon.png");
   setCopyright(tr("Copyright 2010-2022 - Darhon Software"));
   setSupport(tr("Help & Support") + " - " + QCoreApplication::organizationDomain());
-  setPrivacy("");
+  setPrivacy(QString("<a href='https://darhon.com/syncbackup-privacy-policy'>%1</a>").arg(tr("Privacy Policy")));
   setVersion("");
 }
