@@ -75,8 +75,8 @@ Dialog {
 
                 Image {
                     id: id_iconDarhon
-                    width: id_labelRef.height*2
-                    height: id_labelRef.height*2
+                    width: id_labelRef.height*2.5
+                    height: id_labelRef.height*2.5
                     anchors.verticalCenter: parent.verticalCenter
                     source: id_about.iconDarhon
                 }

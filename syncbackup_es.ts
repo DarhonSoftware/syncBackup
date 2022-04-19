@@ -52,6 +52,11 @@
         <source>Help &amp; Support</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="about.cpp" line="27"/>
+        <source>Privacy Policy</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CBackend</name>
