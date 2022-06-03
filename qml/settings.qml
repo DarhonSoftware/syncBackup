@@ -12,7 +12,7 @@ Page {
                 id: id_buttonBack
                 Layout.preferredWidth: id_labelRef.width*8
                 text: qsTr("Back")
-                icon.name: "go-previous"
+                icon.source: "qrc:/images/back.png"
                 onClicked: id_settings.StackView.view.pop(StackView.Immediate)
             }
         }
@@ -178,7 +178,7 @@ Page {
                     Button {
                         text: qsTr("Help")
                         Layout.preferredWidth: id_labelRef.width*8
-                        icon.name: "help-contents"
+                        icon.source: "qrc:/images/help.png"
                         onClicked: id_ExcInclDialog.open()
                     }
                 }
@@ -199,7 +199,7 @@ Page {
                                 id: id_buttonExcInsert
                                 Layout.preferredWidth: id_labelRef.width*8
                                 text: qsTr("Insert")
-                                icon.name: "list-add"
+                                icon.source: "qrc:/images/insert.png"
                                 onClicked: {
                                     if (id_fieldtPath.text!="") backend.addExclude(id_fieldtPath.text)
                                     id_fieldtPath.text=""
@@ -209,7 +209,7 @@ Page {
                                 id: id_buttonExcDelete
                                 Layout.preferredWidth: id_labelRef.width*8
                                 text: qsTr("Delete")
-                                icon.name: "list-remove"
+                                icon.source: "qrc:/images/delete.png"
                                 onClicked: backend.removeExclude(id_listExc.currentIndex)
                             }
                         }
@@ -248,7 +248,7 @@ Page {
                                 id: id_buttonIncInsert
                                 Layout.preferredWidth: id_labelRef.width*8
                                 text: qsTr("Insert")
-                                icon.name: "list-add"
+                                icon.source: "qrc:/images/insert.png"
                                 onClicked: {
                                     if (id_fieldtPath.text!="") backend.addInclude(id_fieldtPath.text)
                                     id_fieldtPath.text=""
@@ -258,7 +258,7 @@ Page {
                                 id: id_buttonIncDelete
                                 Layout.preferredWidth: id_labelRef.width*8
                                 text: qsTr("Delete")
-                                icon.name: "list-remove"
+                                icon.source: "qrc:/images/delete.png"
                                 onClicked: backend.removeInclude(id_listInc.currentIndex)
                             }
                         }

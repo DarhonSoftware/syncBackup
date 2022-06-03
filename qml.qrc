@@ -12,5 +12,21 @@
         <file>html/excinchelp.html</file>
         <file>html/help.html</file>
         <file>qml/SSHDialog.qml</file>
+        <file>images/about1.png</file>
+        <file>images/back.png</file>
+        <file>images/command.png</file>
+        <file>images/delete.png</file>
+        <file>images/folder.png</file>
+        <file>images/help.png</file>
+        <file>images/insert.png</file>
+        <file>images/load.png</file>
+        <file>images/quit.png</file>
+        <file>images/remote.png</file>
+        <file>images/reset.png</file>
+        <file>images/run.png</file>
+        <file>images/save.png</file>
+        <file>images/settings.png</file>
+        <file>images/cancel.png</file>
+        <file>images/copy.png</file>
     </qresource>
 </RCC>

@@ -10,7 +10,7 @@ ApplicationWindow {
             title: qsTr("&Menu")
             Action {
                 text: qsTr("&Command")
-                icon.name: "utilities-terminal"
+                icon.source: "qrc:/images/command.png"
                 onTriggered: {
                     id_commandlineDialog.p_textCommand=backend.exportCommandLine()
                     id_commandlineDialog.open()
@@ -18,18 +18,18 @@ ApplicationWindow {
             }
             Action {
                 text: qsTr("&Help")
-                icon.name: "help-contents"
+                icon.source: "qrc:/images/help.png"
                 onTriggered: id_helpDialog.open()
             }
             Action {
                 text: qsTr("&About")
-                icon.name: "help-about"
+                icon.source: "qrc:/images/about1.png"
                 onTriggered: id_aboutDialog.open()
             }
             MenuSeparator { }
             Action {
                 text: qsTr("&Quit")
-                icon.name: "application-exit"
+                icon.source: "qrc:/images/quit.png"
                 onTriggered: id_appWindow.close()
             }
         }

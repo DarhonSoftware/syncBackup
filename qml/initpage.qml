@@ -14,7 +14,7 @@ Page {
                 Layout.preferredWidth: id_labelRef.width*8
                 enabled: !backend.isRunning
                 text: qsTr("Settings")
-                icon.name: "document-properties"
+                icon.source: "qrc:/images/settings.png"
                 onClicked: id_initpage.StackView.view.push("qrc:/qml/settings.qml",StackView.Immediate)
             }
             ToolSeparator {
@@ -39,7 +39,7 @@ Page {
                 Layout.preferredWidth: id_labelRef.width*8
                 enabled: !backend.isRunning
                 text: qsTr("Load")
-                icon.name: "document-open"
+                icon.source: "qrc:/images/load.png"
                 onClicked: id_fileOpenDialog.open()
             }
             ToolButton {
@@ -47,7 +47,7 @@ Page {
                 Layout.preferredWidth: id_labelRef.width*8
                 enabled: !backend.isRunning
                 text: qsTr("Save As")
-                icon.name: "document-save-as"
+                icon.source: "qrc:/images/save.png"
                 onClicked: id_fileSaveDialog.open()
             }
             ToolButton {
@@ -55,7 +55,7 @@ Page {
                 Layout.preferredWidth: id_labelRef.width*8
                 enabled: !backend.isRunning
                 text: qsTr("Reset")
-                icon.name: "document-revert"
+                icon.source: "qrc:/images/reset.png"
                 onClicked: {
                     backend.resetConfiguration()
                     backend.confFileName=""
@@ -86,7 +86,7 @@ Page {
                         Layout.preferredWidth: id_labelRef.width*8
                         enabled: !backend.isRunning
                         text: qsTr("Local");
-                        icon.name: "folder"
+                        icon.source: "qrc:/images/folder.png"
                         onClicked: id_folderFromDialog.open()
                     }
                     Button {
@@ -94,7 +94,7 @@ Page {
                         Layout.preferredWidth: id_labelRef.width*8
                         enabled: !backend.isRunning
                         text: qsTr("Remote");
-                        icon.name: "applications-internet"
+                        icon.source: "qrc:/images/remote.png"
                         onClicked: id_sshFromDialog.open()
                     }
                     Rectangle {
@@ -132,7 +132,7 @@ Page {
                         Layout.preferredWidth: id_labelRef.width*8
                         enabled: !backend.isRunning
                         text: qsTr("Local");
-                        icon.name: "folder"
+                        icon.source: "qrc:/images/folder.png"
                         onClicked: id_folderToDialog.open()
                     }
                     Button {
@@ -140,7 +140,7 @@ Page {
                         Layout.preferredWidth: id_labelRef.width*8
                         enabled: !backend.isRunning
                         text: qsTr("Remote");
-                        icon.name: "applications-internet"
+                        icon.source: "qrc:/images/remote.png"
                         onClicked: id_sshToDialog.open()
                     }
                     Rectangle {
@@ -189,7 +189,7 @@ Page {
                         enabled: !backend.isRunning
                         Layout.preferredWidth: id_labelRef.width*8
                         text: qsTr("Run");
-                        icon.name: "system-run"
+                        icon.source: "qrc:/images/run.png"
                         onClicked:  {
                             id_textOutput.clear()
                             backend.run(id_checkRunDry.checked)
@@ -211,7 +211,7 @@ Page {
                         enabled: backend.isRunning
                         Layout.preferredWidth: id_labelRef.width*8
                         text: qsTr("Cancel");
-                        icon.name: "process-stop"
+                        icon.source: "qrc:/images/cancel.png"
                         onClicked: backend.cancel()
                     }
                 }
