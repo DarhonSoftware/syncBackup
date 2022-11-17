@@ -1,7 +1,8 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Dialogs 1.3
+import QtCore
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
+import QtQuick.Dialogs
 
 Page {
     id: id_initpage
@@ -269,13 +270,12 @@ Page {
         id: id_fileOpenDialog
         title: qsTr("Open configuration file")
         defaultSuffix: "syb"
-        folder: backend.confFileName=="" ? shortcuts.documents : "file://"+backend.translatePathfromQML(backend.confFileName,false)
+        currentFolder: backend.confFileName=="" ? StandardPaths.writableLocation(StandardPaths.DocumentsLocation) : "file://"+backend.translatePathfromQML(backend.confFileName,false)
         nameFilters: "syncBackup (*.syb)"
-        selectExisting: true
-        selectFolder: false
+        fileMode: FileDialog.OpenFile
         onAccepted: {
-            if (backend.loadConfiguration(backend.translatePathfromQML(fileUrl))) {
-                backend.confFileName=backend.translatePathfromQML(fileUrl)
+            if (backend.loadConfiguration(backend.translatePathfromQML(selectedFile))) {
+                backend.confFileName=backend.translatePathfromQML(selectedFile)
             } else {
                 id_messageDialog.text=qsTr("The configuration file couldn't be opened, it may not be in the correct format")
                 id_messageDialog.open()
@@ -288,13 +288,12 @@ Page {
         id: id_fileSaveDialog
         title: qsTr("Save configuration file")
         defaultSuffix: "syb"
-        folder: backend.confFileName=="" ? shortcuts.documents : "file://"+backend.translatePathfromQML(backend.confFileName,false)
+        currentFolder: backend.confFileName=="" ? StandardPaths.writableLocation(StandardPaths.DocumentsLocation) : "file://"+backend.translatePathfromQML(backend.confFileName,false)
         nameFilters: "syncBackup (*.syb)"
-        selectExisting: false
-        selectFolder: false
+        fileMode: FileDialog.SaveFile
         onAccepted: {
-            if (backend.saveConfiguration(backend.translatePathfromQML(fileUrl))) {
-                backend.confFileName=backend.translatePathfromQML(fileUrl)
+            if (backend.saveConfiguration(backend.translatePathfromQML(selectedFile))) {
+                backend.confFileName=backend.translatePathfromQML(selectedFile)
             } else {
                 id_messageDialog.text=qsTr("The configuration file couldn't be saved")
                 id_messageDialog.open()
@@ -303,26 +302,22 @@ Page {
         }
     }
 
-    FileDialog {
+    FolderDialog {
         id: id_folderFromDialog
         title: qsTr("Select folder for SOURCE")
-        folder: (backend.from=="" || backend.fromPort!="-1") ? shortcuts.home : "file://"+backend.from
-        selectExisting: true
-        selectFolder: true
+        currentFolder: (backend.from=="" || backend.fromPort!="-1") ? StandardPaths.writableLocation(StandardPaths.HomeLocation) : "file://"+backend.from
         onAccepted: {
-            backend.from=backend.translatePathfromQML(fileUrl)
+            backend.from=backend.translatePathfromQML(selectedFolder)
             backend.fromPort="-1"
         }
     }
 
-    FileDialog {
+    FolderDialog {
         id: id_folderToDialog
         title: qsTr("Select folder for DESTINATION")
-        folder: (backend.to=="" || backend.toPort!="-1") ? shortcuts.home : "file://"+backend.to
-        selectExisting: true
-        selectFolder: true
+        currentFolder: (backend.to=="" || backend.toPort!="-1") ? StandardPaths.writableLocation(StandardPaths.HomeLocation) : "file://"+backend.to
         onAccepted: {
-            backend.to=backend.translatePathfromQML(fileUrl)
+            backend.to=backend.translatePathfromQML(selectedFolder)
             backend.toPort="-1"
         }
     }
@@ -352,8 +347,8 @@ Page {
     MessageDialog {
         id: id_messageDialog
         title: qsTr("Information")
-        standardButtons: StandardButton.Ok
-        icon: StandardIcon.Information
+        buttons: MessageDialog.Ok
+//        icon: StandardIcon.Information
     }
 
     Connections {

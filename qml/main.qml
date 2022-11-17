@@ -1,6 +1,6 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Dialogs 1.3
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Dialogs
 import com.darhon 1.0
 
 ApplicationWindow {
@@ -50,10 +50,10 @@ ApplicationWindow {
     MessageDialog {
         id: id_messageDialog
         title: qsTr("Alert")
-        icon: StandardIcon.Warning
-        standardButtons: StandardButton.Yes|StandardButton.No
+//        icon: StandardIcon.Warning
+        buttons: MessageDialog.Yes|MessageDialog.No
         text: qsTr("The process is running, do you still want to close the application?")
-        onYes: Qt.quit()
+        onAccepted: Qt.quit()
     }
 
     CommandlineDialog {
