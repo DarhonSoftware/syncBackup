@@ -13,10 +13,6 @@ QString g_sSshAskPass;
 
 int main(int argc, char *argv[])
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-  QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-#endif
-
   //Initiate main objects
   QGuiApplication App(argc, argv);
 
@@ -57,17 +53,20 @@ int main(int argc, char *argv[])
 
   //Initiate Engine
   QQmlApplicationEngine Engine;
-  const QUrl Url(QStringLiteral("qrc:/qml/main.qml"));
-  QObject::connect(&Engine, &QQmlApplicationEngine::objectCreated,
-                   &App, [Url](QObject *obj, const QUrl &objUrl) {if (!obj && Url == objUrl) QCoreApplication::exit(-1);},
-                   Qt::QueuedConnection);
+  QObject::connect(
+      &Engine,
+      &QQmlApplicationEngine::objectCreationFailed,
+      &App,
+      []() { return QCoreApplication::exit(-1); },
+      Qt::QueuedConnection);
 
   //Initiate global objects
   g_pBackend=new CBackend(&Engine);
 
   //Set up context
   Engine.rootContext()->setContextProperty("backend",g_pBackend);
-  Engine.load(Url);
 
+  //Load QML component
+  Engine.load(QUrl("qrc:/qt/qml/darhon/qml/main.qml"));
   return App.exec();
 }

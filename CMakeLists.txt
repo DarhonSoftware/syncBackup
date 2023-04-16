@@ -1,75 +1,79 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.19)
 
-project(syncbackup VERSION 2.0.1 LANGUAGES CXX)
+project(syncbackup VERSION 2.1.0 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Quick QuickControls2 LinguistTools)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(QT_VERSION_MAJOR 6)
+qt_standard_project_setup(REQUIRES 6.5)
 
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick QuickControls2 LinguistTools REQUIRED)
-
-set(TS_FILES syncbackup_es.ts)
-
-set(PROJECT_SOURCES
+qt_add_executable(${PROJECT_NAME}
         main.cpp
         backend.cpp
         about.cpp
         mainwindow.cpp
         dr_standarditemmodel.cpp
-        qml.qrc
-        ${TS_FILES}
 )
 
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(syncbackup
-        MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
-    )
-# Define target properties for Android with Qt 6 as:
-#    set_property(TARGET syncbackup APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
-# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
-
-    qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
-else()
-    if(ANDROID)
-        add_library(syncbackup SHARED
-            ${PROJECT_SOURCES}
-        )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-    else()
-        add_executable(syncbackup
-          ${PROJECT_SOURCES}
-        )
-    endif()
-
-    qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
-endif()
-
-target_compile_definitions(syncbackup
-  PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
-target_link_libraries(syncbackup
-  PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick Qt${QT_VERSION_MAJOR}::QuickControls2)
-
-set_target_properties(syncbackup PROPERTIES
-    MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
-    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
-    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+qt_add_resources(${PROJECT_NAME} "resources"
+  FILES
+  html/excinchelp.html
+  html/help.html
 )
 
-if(QT_VERSION_MAJOR EQUAL 6)
-    qt_import_qml_plugins(syncbackup)
-    qt_finalize_executable(syncbackup)
-endif()
+qt_add_qml_module(${PROJECT_NAME}
+  URI darhon
+  VERSION 1.0
 
-install(TARGETS syncbackup)
+  QML_FILES
+  qml/AboutDialog.qml
+  qml/CommandlineDialog.qml
+  qml/ExcIncHelpDialog.qml
+  qml/HelpDialog.qml
+  qml/initpage.qml
+  qml/main.qml
+  qml/settings.qml
+  qml/SSHDialog.qml
+
+  RESOURCES
+  images/about.png
+  images/about1.png
+  images/back.png
+  images/cancel.png
+  images/command.png
+  images/copy.png
+  images/darhon.png
+  images/delete.png
+  images/folder.png
+  images/help.png
+  images/insert.png
+  images/load.png
+  images/quit.png
+  images/remote.png
+  images/reset.png
+  images/run.png
+  images/save.png
+  images/settings.png
+)
+
+set_target_properties(${PROJECT_NAME} PROPERTIES
+  MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
+  MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
+  MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+  MACOSX_BUNDLE TRUE
+  WIN32_EXECUTABLE TRUE
+)
+
+target_link_libraries(${PROJECT_NAME}
+  PRIVATE Qt6::Quick Qt6::QuickControls2
+)
+
+qt_add_translations(${PROJECT_NAME}
+  TS_FILES syncbackup_es.ts
+)
+
+install(TARGETS ${PROJECT_NAME})
 install(PROGRAMS pkg-info/com.darhon.syncbackup.desktop  DESTINATION /app/share/applications)
 install(FILES pkg-info/com.darhon.syncbackup.metainfo.xml DESTINATION /app/share/metainfo)
 install(FILES pkg-info/com.darhon.syncbackup_16.png DESTINATION /app/share/icons/hicolor/16x16/apps RENAME com.darhon.syncbackup.png)
@@ -80,7 +84,3 @@ install(FILES pkg-info/com.darhon.syncbackup_64.png DESTINATION /app/share/icons
 install(FILES pkg-info/com.darhon.syncbackup_128.png DESTINATION /app/share/icons/hicolor/128x128/apps RENAME com.darhon.syncbackup.png)
 install(FILES pkg-info/com.darhon.syncbackup_256.png DESTINATION /app/share/icons/hicolor/256x256/apps RENAME com.darhon.syncbackup.png)
 install(FILES pkg-info/com.darhon.syncbackup_512.png DESTINATION /app/share/icons/hicolor/512x512/apps RENAME com.darhon.syncbackup.png)
-
-
-
-

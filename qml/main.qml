@@ -5,12 +5,14 @@ import com.darhon 1.0
 
 ApplicationWindow {
     id: id_appWindow
+    visible: true
+
     menuBar:  MenuBar {
         Menu {
             title: qsTr("&Menu")
             Action {
                 text: qsTr("&Command")
-                icon.source: "qrc:/images/command.png"
+                icon.source: "qrc:/qt/qml/darhon/images/command.png"
                 onTriggered: {
                     id_commandlineDialog.p_textCommand=backend.exportCommandLine()
                     id_commandlineDialog.open()
@@ -18,18 +20,18 @@ ApplicationWindow {
             }
             Action {
                 text: qsTr("&Help")
-                icon.source: "qrc:/images/help.png"
+                icon.source: "qrc:/qt/qml/darhon/images/help.png"
                 onTriggered: id_helpDialog.open()
             }
             Action {
                 text: qsTr("&About")
-                icon.source: "qrc:/images/about1.png"
+                icon.source: "qrc:/qt/qml/darhon/images/about1.png"
                 onTriggered: id_aboutDialog.open()
             }
             MenuSeparator { }
             Action {
                 text: qsTr("&Quit")
-                icon.source: "qrc:/images/quit.png"
+                icon.source: "qrc:/qt/qml/darhon/images/quit.png"
                 onTriggered: id_appWindow.close()
             }
         }
@@ -40,7 +42,7 @@ ApplicationWindow {
     StackView {
         id: id_stack
         anchors.fill: parent
-        initialItem: "qrc:/qml/initpage.qml"
+        initialItem: "qrc:/qt/qml/darhon/qml/initpage.qml"
     }
 
     AboutDialog {
@@ -70,7 +72,6 @@ ApplicationWindow {
         y=id_mainWindow.y
         width=id_mainWindow.width
         height=id_mainWindow.height
-        visible=true
     }
 
     Component.onDestruction: {

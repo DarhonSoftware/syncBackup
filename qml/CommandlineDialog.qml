@@ -41,7 +41,7 @@ Dialog {
                 Layout.preferredWidth: id_labelRef.width*8
                 Layout.alignment: Qt.AlignHCenter
                 text: qsTr("Copy")
-                icon.source: "qrc:/images/copy.png"
+                icon.source: "qrc:/qt/qml/darhon/images/copy.png"
                 onClicked: backend.copyToClipboard(id_fieldCommand.text)
             }
 
