@@ -12,7 +12,7 @@ Page {
         RowLayout {
             ToolButton {
                 id: id_buttonSettings
-                Layout.preferredWidth: id_labelRef.width * 8
+                Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                 enabled: !backend.isRunning
                 text: qsTr("Settings")
                 icon.source: "qrc:/qt/qml/darhon/images/settings.png"
@@ -25,7 +25,7 @@ Page {
             }
             Rectangle {
                 Layout.preferredHeight: id_buttonSettings.height - 4
-                Layout.preferredWidth: id_labelFile.width + id_labelRef.width * 2
+                Layout.preferredWidth: id_labelFile.width + id_labelRef.font.pixelSize * 2
                 Layout.alignment: Qt.AlignVCenter
                 border.width: 1
                 border.color: palette.buttonText
@@ -39,7 +39,7 @@ Page {
             }
             ToolButton {
                 id: id_buttonLoad
-                Layout.preferredWidth: id_labelRef.width * 8
+                Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                 enabled: !backend.isRunning
                 text: qsTr("Load")
                 icon.source: "qrc:/qt/qml/darhon/images/load.png"
@@ -47,7 +47,7 @@ Page {
             }
             ToolButton {
                 id: id_buttonSaveAs
-                Layout.preferredWidth: id_labelRef.width * 8
+                Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                 enabled: !backend.isRunning
                 text: qsTr("Save As")
                 icon.source: "qrc:/qt/qml/darhon/images/save.png"
@@ -55,7 +55,7 @@ Page {
             }
             ToolButton {
                 id: id_buttonReset
-                Layout.preferredWidth: id_labelRef.width * 8
+                Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                 enabled: !backend.isRunning
                 text: qsTr("Reset")
                 icon.source: "qrc:/qt/qml/darhon/images/reset.png"
@@ -69,7 +69,6 @@ Page {
 
     Label {
         id: id_labelRef
-        text: "W"
         visible: false
     }
 
@@ -90,7 +89,7 @@ Page {
                 RowLayout {
                     Button {
                         id: id_buttonBrowseFrom
-                        Layout.preferredWidth: id_labelRef.width * 8
+                        Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         enabled: !backend.isRunning
                         text: qsTr("Local")
                         icon.source: "qrc:/qt/qml/darhon/images/folder.png"
@@ -98,7 +97,7 @@ Page {
                     }
                     Button {
                         id: id_buttonSshFrom
-                        Layout.preferredWidth: id_labelRef.width * 8
+                        Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         enabled: !backend.isRunning
                         text: qsTr("Remote")
                         icon.source: "qrc:/qt/qml/darhon/images/remote.png"
@@ -109,7 +108,7 @@ Page {
                         border.color: palette.buttonText
                         border.width: 1
                         color: palette.button
-                        Layout.preferredWidth: id_labelRef.width * 10
+                        Layout.preferredWidth: id_labelRef.font.pixelSize * 10
                         Layout.preferredHeight: id_buttonBrowseFrom.height
                         Label {
                             id: id_labelFrom
@@ -127,7 +126,7 @@ Page {
                         id: id_fieldFromPort
                         visible: backend.fromPort !== "-1"
                         readOnly: true
-                        Layout.preferredWidth: id_labelRef.width * 7
+                        Layout.preferredWidth: id_labelRef.font.pixelSize * 7
                         horizontalAlignment: TextInput.AlignHCenter
                         text: backend.fromPort
                     }
@@ -136,7 +135,7 @@ Page {
                 RowLayout {
                     Button {
                         id: id_buttonBrowseTo
-                        Layout.preferredWidth: id_labelRef.width * 8
+                        Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         enabled: !backend.isRunning
                         text: qsTr("Local")
                         icon.source: "qrc:/qt/qml/darhon/images/folder.png"
@@ -144,7 +143,7 @@ Page {
                     }
                     Button {
                         id: id_buttonSshTo
-                        Layout.preferredWidth: id_labelRef.width * 8
+                        Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         enabled: !backend.isRunning
                         text: qsTr("Remote")
                         icon.source: "qrc:/qt/qml/darhon/images/remote.png"
@@ -155,7 +154,7 @@ Page {
                         border.color: palette.buttonText
                         border.width: 1
                         color: palette.button
-                        Layout.preferredWidth: id_labelRef.width * 10
+                        Layout.preferredWidth: id_labelRef.font.pixelSize * 10
                         Layout.preferredHeight: id_buttonBrowseTo.height
                         Label {
                             id: id_labelTo
@@ -173,7 +172,7 @@ Page {
                         id: id_fieldToPort
                         visible: backend.toPort !== "-1"
                         readOnly: true
-                        Layout.preferredWidth: id_labelRef.width * 7
+                        Layout.preferredWidth: id_labelRef.font.pixelSize * 7
                         horizontalAlignment: TextInput.AlignHCenter
                         text: backend.toPort
                     }
@@ -193,7 +192,7 @@ Page {
                     Button {
                         id: id_buttonRun
                         enabled: !backend.isRunning
-                        Layout.preferredWidth: id_labelRef.width * 8
+                        Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         text: qsTr("Run")
                         icon.source: "qrc:/qt/qml/darhon/images/run.png"
                         onClicked: {
@@ -215,7 +214,7 @@ Page {
                     Button {
                         id: id_buttonCancel
                         enabled: backend.isRunning
-                        Layout.preferredWidth: id_labelRef.width * 8
+                        Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         text: qsTr("Cancel")
                         icon.source: "qrc:/qt/qml/darhon/images/cancel.png"
                         onClicked: backend.cancel()

@@ -4,8 +4,8 @@ import com.darhon 1.0
 
 Dialog {
     id: id_dialog
-    width: id_labelRef.width * 50
-    height: id_labelRef.height * 30
+    width: id_labelRef.font.pixelSize * 50
+    height: id_labelRef.font.pixelSize * 30
     anchors.centerIn: parent
     title: qsTr("About")
     modal: true
@@ -16,7 +16,6 @@ Dialog {
     }
     Label {
         id: id_labelRef
-        text: "W"
         visible: false
     }
 
@@ -39,14 +38,14 @@ Dialog {
         Column {
             id: id_main
             anchors.centerIn: parent
-            width: parent.width - id_labelRef.height * 2
-            spacing: id_labelRef.height
+            width: parent.width - id_labelRef.font.pixelSize * 2
+            spacing: id_labelRef.font.pixelSize
 
             //ICON
             Image {
                 id: id_iconAbout
-                width: id_labelRef.height * 4
-                height: id_labelRef.height * 4
+                width: id_labelRef.font.pixelSize * 4
+                height: id_labelRef.font.pixelSize * 4
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: id_about.iconAbout
             }
@@ -81,8 +80,8 @@ Dialog {
 
                 Image {
                     id: id_iconDarhon
-                    width: id_labelRef.height * 2.5
-                    height: id_labelRef.height * 2.5
+                    width: id_labelRef.font.pixelSize * 2.5
+                    height: id_labelRef.font.pixelSize * 2.5
                     anchors.verticalCenter: parent.verticalCenter
                     source: id_about.iconDarhon
                 }

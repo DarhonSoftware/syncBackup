@@ -3,8 +3,8 @@ import QtQuick.Controls
 
 Dialog {
     id: id_dialog
-    width: id_labelRef.width * 60
-    height: id_labelRef.height * 35
+    width: id_labelRef.font.pixelSize * 60
+    height: id_labelRef.font.pixelSize * 35
     title: qsTr("Guidelines to exclude or include files and directories")
     anchors.centerIn: parent
     modal: true
@@ -12,7 +12,6 @@ Dialog {
 
     Label {
         id: id_labelRef
-        text: "W"
         visible: false
     }
 

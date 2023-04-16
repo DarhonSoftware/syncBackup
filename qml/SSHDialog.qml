@@ -7,7 +7,7 @@ Dialog {
     property alias p_textPort: id_fieldPort.text
     property alias p_textAddress: id_fieldAddress.text
 
-    width: id_labelRef.width * 70
+    width: id_labelRef.font.pixelSize * 70
     height: header.height + footer.height + id_main.height * 1.5
     title: qsTr("Address to remote server")
     anchors.centerIn: parent
@@ -16,7 +16,6 @@ Dialog {
 
     Label {
         id: id_labelRef
-        text: "W"
         visible: false
     }
 

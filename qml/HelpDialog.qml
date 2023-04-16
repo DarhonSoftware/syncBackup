@@ -3,8 +3,8 @@ import QtQuick.Controls
 
 Dialog {
     id: id_dialog
-    width: id_labelRef.width * 50
-    height: id_labelRef.height * 25
+    width: id_labelRef.font.pixelSize * 50
+    height: id_labelRef.font.pixelSize * 25
     title: qsTr("Help")
     anchors.centerIn: parent
     modal: true
@@ -12,7 +12,6 @@ Dialog {
 
     Label {
         id: id_labelRef
-        text: "W"
         visible: false
     }
 

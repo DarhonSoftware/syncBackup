@@ -10,7 +10,7 @@ Page {
         RowLayout {
             ToolButton {
                 id: id_buttonBack
-                Layout.preferredWidth: id_labelRef.width * 8
+                Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                 text: qsTr("Back")
                 icon.source: "qrc:/qt/qml/darhon/images/back.png"
                 onClicked: id_settings.StackView.view.pop(StackView.Immediate)
@@ -20,7 +20,6 @@ Page {
 
     Label {
         id: id_labelRef
-        text: "W"
         visible: false
     }
 
@@ -183,7 +182,7 @@ Page {
                     }
                     Button {
                         text: qsTr("Help")
-                        Layout.preferredWidth: id_labelRef.width * 8
+                        Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         icon.source: "qrc:/qt/qml/darhon/images/help.png"
                         onClicked: id_ExcInclDialog.open()
                     }
@@ -203,7 +202,7 @@ Page {
                             }
                             Button {
                                 id: id_buttonExcInsert
-                                Layout.preferredWidth: id_labelRef.width * 8
+                                Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                                 text: qsTr("Insert")
                                 icon.source: "qrc:/qt/qml/darhon/images/insert.png"
                                 onClicked: {
@@ -214,7 +213,7 @@ Page {
                             }
                             Button {
                                 id: id_buttonExcDelete
-                                Layout.preferredWidth: id_labelRef.width * 8
+                                Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                                 text: qsTr("Delete")
                                 icon.source: "qrc:/qt/qml/darhon/images/delete.png"
                                 onClicked: backend.removeExclude(
@@ -254,7 +253,7 @@ Page {
                             }
                             Button {
                                 id: id_buttonIncInsert
-                                Layout.preferredWidth: id_labelRef.width * 8
+                                Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                                 text: qsTr("Insert")
                                 icon.source: "qrc:/qt/qml/darhon/images/insert.png"
                                 onClicked: {
@@ -265,7 +264,7 @@ Page {
                             }
                             Button {
                                 id: id_buttonIncDelete
-                                Layout.preferredWidth: id_labelRef.width * 8
+                                Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                                 text: qsTr("Delete")
                                 icon.source: "qrc:/qt/qml/darhon/images/delete.png"
                                 onClicked: backend.removeInclude(
