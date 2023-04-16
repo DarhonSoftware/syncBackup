@@ -25,7 +25,7 @@ void CAbout::init()
         + tr("It finds files that need to be transferred using a 'quick check' algorithm "
              "that looks for files that have changed in size or in last-modified time."));
     setIconDarhon("qrc:/qt/qml/darhon/images/darhon.png");
-    setCopyright(tr("Copyright 2010-2022 - Darhon Software"));
+    setCopyright(tr("Copyright 2010-2023 - Darhon Software"));
     setSupport(tr("Help & Support") + " - " + QCoreApplication::organizationDomain());
     setPrivacy(QString("<a href='https://darhon.com/syncbackup-privacy-policy'>%1</a>")
                    .arg(tr("Privacy Policy")));
