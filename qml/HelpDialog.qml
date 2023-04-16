@@ -3,14 +3,18 @@ import QtQuick.Controls
 
 Dialog {
     id: id_dialog
-    width: id_labelRef.width*50
-    height: id_labelRef.height*25
+    width: id_labelRef.width * 50
+    height: id_labelRef.height * 25
     title: qsTr("Help")
     anchors.centerIn: parent
     modal: true
     standardButtons: Dialog.Ok
 
-    Label {id: id_labelRef; text: "W"; visible: false;}
+    Label {
+        id: id_labelRef
+        text: "W"
+        visible: false
+    }
 
     header: Rectangle {
         id: id_header
@@ -26,7 +30,7 @@ Dialog {
         }
     }
 
-    contentItem:  Rectangle {
+    contentItem: Rectangle {
         anchors.top: header.bottom
         anchors.bottom: footer.top
         anchors.left: parent.left

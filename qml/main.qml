@@ -7,14 +7,14 @@ ApplicationWindow {
     id: id_appWindow
     visible: true
 
-    menuBar:  MenuBar {
+    menuBar: MenuBar {
         Menu {
             title: qsTr("&Menu")
             Action {
                 text: qsTr("&Command")
                 icon.source: "qrc:/qt/qml/darhon/images/command.png"
                 onTriggered: {
-                    id_commandlineDialog.p_textCommand=backend.exportCommandLine()
+                    id_commandlineDialog.p_textCommand = backend.exportCommandLine()
                     id_commandlineDialog.open()
                 }
             }
@@ -28,7 +28,7 @@ ApplicationWindow {
                 icon.source: "qrc:/qt/qml/darhon/images/about1.png"
                 onTriggered: id_aboutDialog.open()
             }
-            MenuSeparator { }
+            MenuSeparator {}
             Action {
                 text: qsTr("&Quit")
                 icon.source: "qrc:/qt/qml/darhon/images/quit.png"
@@ -37,7 +37,9 @@ ApplicationWindow {
         }
     }
 
-    MainWindow {id: id_mainWindow}
+    MainWindow {
+        id: id_mainWindow
+    }
 
     StackView {
         id: id_stack
@@ -52,8 +54,7 @@ ApplicationWindow {
     MessageDialog {
         id: id_messageDialog
         title: qsTr("Alert")
-//        icon: StandardIcon.Warning
-        buttons: MessageDialog.Yes|MessageDialog.No
+        buttons: MessageDialog.Yes | MessageDialog.No
         text: qsTr("The process is running, do you still want to close the application?")
         onAccepted: Qt.quit()
     }
@@ -68,24 +69,24 @@ ApplicationWindow {
 
     Component.onCompleted: {
         backend.init()
-        x=id_mainWindow.x
-        y=id_mainWindow.y
-        width=id_mainWindow.width
-        height=id_mainWindow.height
+        x = id_mainWindow.x
+        y = id_mainWindow.y
+        width = id_mainWindow.width
+        height = id_mainWindow.height
     }
 
     Component.onDestruction: {
-        id_mainWindow.x=x
-        id_mainWindow.y=y
-        id_mainWindow.width=width
-        id_mainWindow.height=height
+        id_mainWindow.x = x
+        id_mainWindow.y = y
+        id_mainWindow.width = width
+        id_mainWindow.height = height
         backend.end()
     }
 
     onClosing: {
         if (backend.isRunning) {
             id_messageDialog.open()
-            close.accepted=false
+            close.accepted = false
         }
     }
 }

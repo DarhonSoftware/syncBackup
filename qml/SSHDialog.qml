@@ -8,13 +8,17 @@ Dialog {
     property alias p_textAddress: id_fieldAddress.text
 
     width: id_labelRef.width * 70
-    height: header.height + footer.height + id_main.height*1.5
+    height: header.height + footer.height + id_main.height * 1.5
     title: qsTr("Address to remote server")
     anchors.centerIn: parent
     modal: true
-    standardButtons: Dialog.Save|Dialog.Cancel
+    standardButtons: Dialog.Save | Dialog.Cancel
 
-    Label {id: id_labelRef; text: "W"; visible: false;}
+    Label {
+        id: id_labelRef
+        text: "W"
+        visible: false
+    }
 
     header: Rectangle {
         id: id_header
@@ -30,7 +34,7 @@ Dialog {
         }
     }
 
-    contentItem: Item{
+    contentItem: Item {
         ColumnLayout {
             id: id_main
             width: parent.width - 10
@@ -47,7 +51,9 @@ Dialog {
                     id: id_fieldPort
                     Layout.fillWidth: true
                     inputMethodHints: Qt.ImhDigitsOnly
-                    validator: IntValidator{bottom: 0}
+                    validator: IntValidator {
+                        bottom: 0
+                    }
                     placeholderText: "22"
                 }
             }
@@ -63,7 +69,6 @@ Dialog {
                     placeholderText: qsTr("USER@HOST:PATH (username@200.150.150.11:backup_folder)")
                 }
             }
-
         }
     }
 }

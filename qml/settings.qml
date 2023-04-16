@@ -10,7 +10,7 @@ Page {
         RowLayout {
             ToolButton {
                 id: id_buttonBack
-                Layout.preferredWidth: id_labelRef.width*8
+                Layout.preferredWidth: id_labelRef.width * 8
                 text: qsTr("Back")
                 icon.source: "qrc:/qt/qml/darhon/images/back.png"
                 onClicked: id_settings.StackView.view.pop(StackView.Immediate)
@@ -18,11 +18,15 @@ Page {
         }
     }
 
-    Label {id: id_labelRef; text: "W"; visible: false;}
+    Label {
+        id: id_labelRef
+        text: "W"
+        visible: false
+    }
 
     ColumnLayout {
-        width: parent.width-10
-        height: parent.height-30
+        width: parent.width - 10
+        height: parent.height - 30
         anchors.centerIn: parent
         spacing: 20
 
@@ -32,11 +36,11 @@ Page {
 
             GroupBox {
                 id: id_group1
-                Layout.preferredWidth: parent.width/2
+                Layout.preferredWidth: parent.width / 2
                 Layout.preferredHeight: id_group2.height
                 clip: true
                 label: Label {
-                    text: " "+qsTr("Configure files in destination")
+                    text: " " + qsTr("Configure files in destination")
                     font.bold: true
                 }
                 ColumnLayout {
@@ -44,25 +48,25 @@ Page {
                         id: id_checkGroup
                         text: qsTr("Set the <u>group</u> of the destination file to be the same as the source")
                         checked: backend.group
-                        onToggled: backend.group=checked
+                        onToggled: backend.group = checked
                     }
                     CheckBox {
                         id: id_checkOwner
                         text: qsTr("Set the <u>owner</u> of the destination file to be the same as the source")
                         checked: backend.owner
-                        onToggled: backend.owner=checked
+                        onToggled: backend.owner = checked
                     }
                     CheckBox {
                         id: id_checkPerms
                         text: qsTr("Set the <u>permission</u> of the destination file to be the same as the source")
                         checked: backend.perms
-                        onToggled: backend.perms=checked
+                        onToggled: backend.perms = checked
                     }
                     CheckBox {
                         id: id_checkLinks
                         text: qsTr("When a <u>symlink</u> is encountered, recreates the symlink in the destination")
                         checked: backend.links
-                        onToggled: backend.links=checked
+                        onToggled: backend.links = checked
                     }
                 }
             }
@@ -72,7 +76,7 @@ Page {
                 Layout.fillWidth: true
                 clip: true
                 label: Label {
-                    text: " "+qsTr("Configure actions in destination")
+                    text: " " + qsTr("Configure actions in destination")
                     font.bold: true
                 }
                 ColumnLayout {
@@ -80,31 +84,31 @@ Page {
                         id: id_checkDel
                         text: qsTr("Delete files in the destination, if they are no longer in the source")
                         checked: backend.del
-                        onToggled: backend.del=checked
+                        onToggled: backend.del = checked
                     }
                     CheckBox {
                         id: id_checkDeleteExcluded
                         text: qsTr("Delete files in the destination, if they are marked as excluded in the source")
                         checked: backend.deleteExcluded
-                        onToggled: backend.deleteExcluded=checked
+                        onToggled: backend.deleteExcluded = checked
                     }
                     CheckBox {
                         id: id_checkIgnoreNonExisting
                         text: qsTr("Only update existing files in the destination. Do not transfer new files")
                         checked: backend.ignoreNonExisting
-                        onToggled: backend.ignoreNonExisting=checked
+                        onToggled: backend.ignoreNonExisting = checked
                     }
                     CheckBox {
                         id: id_checkIgnoreExisting
                         text: qsTr("Do not replace files in the destination, if they already exist")
                         checked: backend.ignoreExisting
-                        onToggled: backend.ignoreExisting=checked
+                        onToggled: backend.ignoreExisting = checked
                     }
                     CheckBox {
                         id: id_checkUpdate
                         text: qsTr("Do not replace files in the destination, when modified time is newer than the source")
                         checked: backend.update
-                        onToggled: backend.update=checked
+                        onToggled: backend.update = checked
                     }
                 }
             }
@@ -115,7 +119,7 @@ Page {
             Layout.fillWidth: true
             clip: true
             label: Label {
-                text: " "+qsTr("Configure actions in source")
+                text: " " + qsTr("Configure actions in source")
                 font.bold: true
             }
             ColumnLayout {
@@ -123,29 +127,31 @@ Page {
                     id: id_checkRecursive
                     text: qsTr("Copy directories recursively")
                     checked: backend.recursive
-                    onToggled: backend.recursive=checked
+                    onToggled: backend.recursive = checked
                 }
                 RowLayout {
                     CheckBox {
                         id: id_checkMaxSize
                         text: qsTr("Avoid transferring files larger than")
                         checked: backend.maxSize
-                        onToggled: backend.maxSize=checked
+                        onToggled: backend.maxSize = checked
                     }
                     TextField {
                         id: id_fieldMaxSizeAmount
                         enabled: id_checkMaxSize.checked
                         inputMethodHints: Qt.ImhDigitsOnly
-                        validator: IntValidator{bottom: 0}
+                        validator: IntValidator {
+                            bottom: 0
+                        }
                         text: backend.maxSizeValue
-                        onEditingFinished: backend.maxSizeValue=text
+                        onEditingFinished: backend.maxSizeValue = text
                     }
                     ComboBox {
                         id: id_comboUnit
                         enabled: id_checkMaxSize.checked
-                        model: ["Bytes","KBytes","MBytes","GBytes"]
+                        model: ["Bytes", "KBytes", "MBytes", "GBytes"]
                         currentIndex: backend.unit
-                        onActivated: backend.unit=currentIndex
+                        onActivated: backend.unit = currentIndex
                     }
                 }
             }
@@ -177,7 +183,7 @@ Page {
                     }
                     Button {
                         text: qsTr("Help")
-                        Layout.preferredWidth: id_labelRef.width*8
+                        Layout.preferredWidth: id_labelRef.width * 8
                         icon.source: "qrc:/qt/qml/darhon/images/help.png"
                         onClicked: id_ExcInclDialog.open()
                     }
@@ -197,20 +203,22 @@ Page {
                             }
                             Button {
                                 id: id_buttonExcInsert
-                                Layout.preferredWidth: id_labelRef.width*8
+                                Layout.preferredWidth: id_labelRef.width * 8
                                 text: qsTr("Insert")
                                 icon.source: "qrc:/qt/qml/darhon/images/insert.png"
                                 onClicked: {
-                                    if (id_fieldtPath.text!="") backend.addExclude(id_fieldtPath.text)
-                                    id_fieldtPath.text=""
+                                    if (id_fieldtPath.text != "")
+                                        backend.addExclude(id_fieldtPath.text)
+                                    id_fieldtPath.text = ""
                                 }
                             }
                             Button {
                                 id: id_buttonExcDelete
-                                Layout.preferredWidth: id_labelRef.width*8
+                                Layout.preferredWidth: id_labelRef.width * 8
                                 text: qsTr("Delete")
                                 icon.source: "qrc:/qt/qml/darhon/images/delete.png"
-                                onClicked: backend.removeExclude(id_listExc.currentIndex)
+                                onClicked: backend.removeExclude(
+                                               id_listExc.currentIndex)
                             }
                         }
 
@@ -246,20 +254,22 @@ Page {
                             }
                             Button {
                                 id: id_buttonIncInsert
-                                Layout.preferredWidth: id_labelRef.width*8
+                                Layout.preferredWidth: id_labelRef.width * 8
                                 text: qsTr("Insert")
                                 icon.source: "qrc:/qt/qml/darhon/images/insert.png"
                                 onClicked: {
-                                    if (id_fieldtPath.text!="") backend.addInclude(id_fieldtPath.text)
-                                    id_fieldtPath.text=""
+                                    if (id_fieldtPath.text != "")
+                                        backend.addInclude(id_fieldtPath.text)
+                                    id_fieldtPath.text = ""
                                 }
                             }
                             Button {
                                 id: id_buttonIncDelete
-                                Layout.preferredWidth: id_labelRef.width*8
+                                Layout.preferredWidth: id_labelRef.width * 8
                                 text: qsTr("Delete")
                                 icon.source: "qrc:/qt/qml/darhon/images/delete.png"
-                                onClicked: backend.removeInclude(id_listInc.currentIndex)
+                                onClicked: backend.removeInclude(
+                                               id_listInc.currentIndex)
                             }
                         }
 
@@ -320,28 +330,31 @@ Page {
                 anchors.rightMargin: 5
                 visible: p_editMode
                 onEditingFinished: {
-                    role_c0=text
-                    p_editMode=false
+                    role_c0 = text
+                    p_editMode = false
                 }
                 onVisibleChanged: {
-                    text=role_c0
-                    if (visible) focus=true
+                    text = role_c0
+                    if (visible)
+                        focus = true
                 }
             }
 
-            onPressed: ListView.view.currentIndex=index
-            onDoubleClicked: p_editMode=true
+            onPressed: ListView.view.currentIndex = index
+            onDoubleClicked: p_editMode = true
 
             Keys.onPressed: {
-                if (event.key===Qt.Key_F2) {
+                if (event.key === Qt.Key_F2) {
                     doubleClicked()
-                    event.accepted=true
+                    event.accepted = true
                 }
             }
 
-            Keys.onEscapePressed: p_editMode=false
-            Keys.onUpPressed: if (ListView.view.currentIndex>0) ListView.view.currentIndex--
-            Keys.onDownPressed: if (ListView.view.currentIndex<ListView.view.count-1) ListView.view.currentIndex++
+            Keys.onEscapePressed: p_editMode = false
+            Keys.onUpPressed: if (ListView.view.currentIndex > 0)
+                                  ListView.view.currentIndex--
+            Keys.onDownPressed: if (ListView.view.currentIndex < ListView.view.count - 1)
+                                    ListView.view.currentIndex++
         }
     }
 
