@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import com.darhon 1.0
+import darhon
 
 Dialog {
     id: id_dialog
@@ -11,9 +11,10 @@ Dialog {
     modal: true
     standardButtons: Dialog.Ok
 
-    About {
+    CAbout {
         id: id_about
     }
+
     Label {
         id: id_labelRef
         visible: false

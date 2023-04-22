@@ -1,9 +1,7 @@
 #include <QGuiApplication>
 #include <QQuickStyle>
 #include <QtQml>
-#include "about.h"
 #include "backend.h"
-#include "mainwindow.h"
 
 #include <QLocale>
 #include <QTranslator>
@@ -45,10 +43,6 @@ int main(int argc, char *argv[])
     if (Translator.load(QString("syncbackup_") + sLanguage, ":/i18n"))
         App.installTranslator(&Translator);
 
-    //Register QML Object Types
-    qmlRegisterType<CAbout>("com.darhon", 1, 0, "About");
-    qmlRegisterType<CMainWindow>("com.darhon", 1, 0, "MainWindow");
-
     //Initiate Engine
     QQmlApplicationEngine Engine;
     QObject::connect(
@@ -65,6 +59,6 @@ int main(int argc, char *argv[])
     Engine.rootContext()->setContextProperty("backend", g_pBackend);
 
     //Load QML component
-    Engine.load(QUrl("qrc:/qt/qml/darhon/qml/main.qml"));
+    Engine.load(QUrl("qrc:/qt/qml/darhon/qml/mainwindow.qml"));
     return App.exec();
 }

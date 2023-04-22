@@ -32,7 +32,7 @@ qt_add_qml_module(${PROJECT_NAME}
   qml/ExcIncHelpDialog.qml
   qml/HelpDialog.qml
   qml/initpage.qml
-  qml/main.qml
+  qml/mainwindow.qml
   qml/settings.qml
   qml/SSHDialog.qml
 

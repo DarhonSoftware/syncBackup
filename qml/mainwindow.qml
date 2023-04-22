@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Dialogs
-import com.darhon 1.0
+import darhon
 
 ApplicationWindow {
     id: id_appWindow
@@ -37,7 +37,7 @@ ApplicationWindow {
         }
     }
 
-    MainWindow {
+    CMainWindow {
         id: id_mainWindow
     }
 

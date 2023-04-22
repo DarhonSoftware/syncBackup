@@ -278,10 +278,10 @@ Page {
         title: qsTr("Open configuration file")
         defaultSuffix: "syb"
         currentFolder: backend.confFileName
-                       == "" ? StandardPaths.writableLocation(
-                                   StandardPaths.DocumentsLocation) : "file://"
-                               + backend.translatePathfromQML(
-                                   backend.confFileName, false)
+                       === "" ? StandardPaths.writableLocation(
+                                    StandardPaths.DocumentsLocation) : "file://"
+                                + backend.translatePathfromQML(
+                                    backend.confFileName, false)
         nameFilters: "syncBackup (*.syb)"
         fileMode: FileDialog.OpenFile
         onAccepted: {
@@ -303,10 +303,10 @@ Page {
         title: qsTr("Save configuration file")
         defaultSuffix: "syb"
         currentFolder: backend.confFileName
-                       == "" ? StandardPaths.writableLocation(
-                                   StandardPaths.DocumentsLocation) : "file://"
-                               + backend.translatePathfromQML(
-                                   backend.confFileName, false)
+                       === "" ? StandardPaths.writableLocation(
+                                    StandardPaths.DocumentsLocation) : "file://"
+                                + backend.translatePathfromQML(
+                                    backend.confFileName, false)
         nameFilters: "syncBackup (*.syb)"
         fileMode: FileDialog.SaveFile
         onAccepted: {
@@ -326,9 +326,9 @@ Page {
     FolderDialog {
         id: id_folderFromDialog
         title: qsTr("Select folder for SOURCE")
-        currentFolder: (backend.from == "" || backend.fromPort
-                        != "-1") ? StandardPaths.writableLocation(
-                                       StandardPaths.HomeLocation) : "file://" + backend.from
+        currentFolder: (backend.from === "" || backend.fromPort
+                        !== "-1") ? StandardPaths.writableLocation(
+                                        StandardPaths.HomeLocation) : "file://" + backend.from
         onAccepted: {
             backend.from = backend.translatePathfromQML(selectedFolder)
             backend.fromPort = "-1"
@@ -338,9 +338,9 @@ Page {
     FolderDialog {
         id: id_folderToDialog
         title: qsTr("Select folder for DESTINATION")
-        currentFolder: (backend.to == "" || backend.toPort
-                        != "-1") ? StandardPaths.writableLocation(
-                                       StandardPaths.HomeLocation) : "file://" + backend.to
+        currentFolder: (backend.to === "" || backend.toPort
+                        !== "-1") ? StandardPaths.writableLocation(
+                                        StandardPaths.HomeLocation) : "file://" + backend.to
         onAccepted: {
             backend.to = backend.translatePathfromQML(selectedFolder)
             backend.toPort = "-1"
@@ -349,24 +349,24 @@ Page {
 
     SSHDialog {
         id: id_sshFromDialog
-        p_textAddress: backend.fromPort == "-1" ? "" : backend.from
-        p_textPort: backend.fromPort == "-1" ? "" : backend.fromPort
+        p_textAddress: backend.fromPort === "-1" ? "" : backend.from
+        p_textPort: backend.fromPort === "-1" ? "" : backend.fromPort
         onAccepted: {
             backend.from = p_textAddress
             backend.fromPort = p_textPort
-            if (backend.fromPort == "")
+            if (backend.fromPort === "")
                 backend.fromPort = "22"
         }
     }
 
     SSHDialog {
         id: id_sshToDialog
-        p_textAddress: backend.toPort == "-1" ? "" : backend.to
-        p_textPort: backend.toPort == "-1" ? "" : backend.toPort
+        p_textAddress: backend.toPort === "-1" ? "" : backend.to
+        p_textPort: backend.toPort === "-1" ? "" : backend.toPort
         onAccepted: {
             backend.to = p_textAddress
             backend.toPort = p_textPort
-            if (backend.toPort == "")
+            if (backend.toPort === "")
                 backend.toPort = "22"
         }
     }
