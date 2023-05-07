@@ -1,7 +1,8 @@
-cmake_minimum_required(VERSION 3.19)
+cmake_minimum_required(VERSION 3.22)
 
 project(syncbackup VERSION 2.1.0 LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 find_package(Qt6 6.5 REQUIRED COMPONENTS Quick QuickControls2 LinguistTools)
@@ -9,11 +10,11 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Quick QuickControls2 LinguistTools)
 qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(${PROJECT_NAME}
-        main.cpp
-        backend.cpp
-        about.cpp
-        mainwindow.cpp
-        dr_standarditemmodel.cpp
+  main.cpp
+  backend.cpp
+  about.cpp
+  mainwindow.cpp
+  dr_standarditemmodel.cpp
 )
 
 qt_add_resources(${PROJECT_NAME} "resources"
@@ -59,6 +60,7 @@ qt_add_qml_module(${PROJECT_NAME}
 
 qt_add_translations(${PROJECT_NAME}
   TS_FILES syncbackup_es.ts
+  LUPDATE_OPTIONS -no-obsolete
 )
 
 target_link_libraries(${PROJECT_NAME}
