@@ -39,9 +39,9 @@ int main(int argc, char *argv[])
 
     //Setup translations
     QTranslator Translator;
-    QString sLanguage = QLocale::system().name().left(2);
-    if (Translator.load(QString("syncbackup_") + sLanguage, ":/i18n"))
+    if (Translator.load(QLocale(), "syncbackup", "_", ":/i18n")) {
         App.installTranslator(&Translator);
+    }
 
     //Initiate Engine
     QQmlApplicationEngine Engine;

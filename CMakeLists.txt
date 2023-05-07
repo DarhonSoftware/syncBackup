@@ -58,6 +58,8 @@ qt_add_qml_module(${PROJECT_NAME}
   images/settings.png
 )
 
+# To update the entries in the .ts file, build the update_translations target:
+# <build-dir>$ cmake --build . --target update_translations
 qt_add_translations(${PROJECT_NAME}
   TS_FILES syncbackup_es.ts
   LUPDATE_OPTIONS -no-obsolete
