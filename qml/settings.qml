@@ -10,7 +10,7 @@ Page {
         RowLayout {
             ToolButton {
                 id: id_buttonBack
-                Layout.preferredWidth: id_labelRef.font.pixelSize * 8
+                Layout.preferredWidth: id_labelRef.font.pixelSize * 10
                 text: qsTr("Back")
                 icon.source: "qrc:/qt/qml/darhon/images/back.png"
                 onClicked: id_settings.StackView.view.pop(StackView.Immediate)

@@ -12,7 +12,7 @@ Page {
         RowLayout {
             ToolButton {
                 id: id_buttonSettings
-                Layout.preferredWidth: id_labelRef.font.pixelSize * 8
+                Layout.preferredWidth: id_labelRef.font.pixelSize * 10
                 enabled: !backend.isRunning
                 text: qsTr("Settings")
                 icon.source: "qrc:/qt/qml/darhon/images/settings.png"
@@ -39,7 +39,7 @@ Page {
             }
             ToolButton {
                 id: id_buttonLoad
-                Layout.preferredWidth: id_labelRef.font.pixelSize * 8
+                Layout.preferredWidth: id_labelRef.font.pixelSize * 10
                 enabled: !backend.isRunning
                 text: qsTr("Load")
                 icon.source: "qrc:/qt/qml/darhon/images/load.png"
@@ -47,7 +47,7 @@ Page {
             }
             ToolButton {
                 id: id_buttonSaveAs
-                Layout.preferredWidth: id_labelRef.font.pixelSize * 8
+                Layout.preferredWidth: id_labelRef.font.pixelSize * 10
                 enabled: !backend.isRunning
                 text: qsTr("Save As")
                 icon.source: "qrc:/qt/qml/darhon/images/save.png"
@@ -55,7 +55,7 @@ Page {
             }
             ToolButton {
                 id: id_buttonReset
-                Layout.preferredWidth: id_labelRef.font.pixelSize * 8
+                Layout.preferredWidth: id_labelRef.font.pixelSize * 10
                 enabled: !backend.isRunning
                 text: qsTr("Reset")
                 icon.source: "qrc:/qt/qml/darhon/images/reset.png"
