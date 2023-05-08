@@ -17,11 +17,11 @@ void CAbout::init()
         QString("%1 %2 (Qt - %3)").arg("syncBackup", qApp->applicationVersion(), QT_VERSION_STR));
     setCaption(tr("Backup and mirror your drives"));
     setDescription(
-        tr("It offers the most common options getting most of the power from rsync.") + "\n"
+        tr("It offers the most common options getting most of the power from rsync.") + "\n\n"
         + tr("It takes advantage of the delta-transfer algorithm, which reduces the "
              "amount of data sent over the network by sending only the differences "
              "between the source files and the existing files in the destination.")
-        + "\n"
+        + "\n\n"
         + tr("It finds files that need to be transferred using a 'quick check' algorithm "
              "that looks for files that have changed in size or in last-modified time."));
     setIconDarhon("qrc:/qt/qml/darhon/images/darhon.png");

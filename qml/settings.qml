@@ -31,11 +31,12 @@ Page {
 
         RowLayout {
             id: id_row1
+            Layout.fillWidth: true
             spacing: 2
 
             GroupBox {
                 id: id_group1
-                Layout.preferredWidth: parent.width / 2
+                Layout.fillWidth: true
                 Layout.preferredHeight: id_group2.height
                 clip: true
                 label: Label {
@@ -206,7 +207,7 @@ Page {
                                 text: qsTr("Insert")
                                 icon.source: "qrc:/qt/qml/darhon/images/insert.png"
                                 onClicked: {
-                                    if (id_fieldtPath.text != "")
+                                    if (id_fieldtPath.text !== "")
                                         backend.addExclude(id_fieldtPath.text)
                                     id_fieldtPath.text = ""
                                 }
@@ -257,7 +258,7 @@ Page {
                                 text: qsTr("Insert")
                                 icon.source: "qrc:/qt/qml/darhon/images/insert.png"
                                 onClicked: {
-                                    if (id_fieldtPath.text != "")
+                                    if (id_fieldtPath.text !== "")
                                         backend.addInclude(id_fieldtPath.text)
                                     id_fieldtPath.text = ""
                                 }
@@ -342,12 +343,12 @@ Page {
             onPressed: ListView.view.currentIndex = index
             onDoubleClicked: p_editMode = true
 
-            Keys.onPressed: {
-                if (event.key === Qt.Key_F2) {
-                    doubleClicked()
-                    event.accepted = true
-                }
-            }
+            Keys.onPressed: event => {
+                                if (event.key === Qt.Key_F2) {
+                                    doubleClicked()
+                                    event.accepted = true
+                                }
+                            }
 
             Keys.onEscapePressed: p_editMode = false
             Keys.onUpPressed: if (ListView.view.currentIndex > 0)
