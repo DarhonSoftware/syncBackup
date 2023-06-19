@@ -32,10 +32,10 @@ int main(int argc, char *argv[])
     QQuickStyle::setStyle("Fusion");
 
     //Set application names
-    QCoreApplication::setOrganizationName("Darhon");
+    QCoreApplication::setOrganizationName("darhon");
     QCoreApplication::setApplicationName("syncBackup");
     QCoreApplication::setApplicationVersion("2.1.0");
-    QCoreApplication::setOrganizationDomain("www.darhon.com");
+    QCoreApplication::setOrganizationDomain("darhon.com");
 
     //Setup translations
     QTranslator Translator;
