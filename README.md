@@ -22,4 +22,4 @@
 </ul>
 
 ## Availability
-<p>[syncBackup from Flathub](https://flathub.org/apps/com.darhon.syncbackup)</p>
+[syncBackup from Flathub](https://flathub.org/apps/com.darhon.syncbackup)
