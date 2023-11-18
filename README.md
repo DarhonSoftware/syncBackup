@@ -20,3 +20,5 @@
   <li>Choose to limit the size of the files to be transfered to the destination side.</li>
   <li>There is an option to run the application in trial version to analyze the changes to be applied before running the real process.</li>
 </ul>
+## Availability
+[syncBackup from Flathub](https://flathub.org/apps/com.darhon.syncbackup)
