@@ -21,4 +21,4 @@
   <li>There is an option to run the application in trial version to analyze the changes to be applied before running the real process.</li>
 </ul>
 ## Availability
-[syncBackup from Flathub](https://flathub.org/apps/com.darhon.syncbackup)
+<p>[syncBackup from Flathub](https://flathub.org/apps/com.darhon.syncbackup)</p>
