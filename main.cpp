@@ -59,6 +59,6 @@ int main(int argc, char *argv[])
     Engine.rootContext()->setContextProperty("backend", g_pBackend);
 
     //Load QML component
-    Engine.load(QUrl("qrc:/qt/qml/darhon/qml/mainwindow.qml"));
+    Engine.load(QUrl("qrc:/darhon/qml/mainwindow.qml"));
     return App.exec();
 }

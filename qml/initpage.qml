@@ -15,9 +15,9 @@ Page {
                 Layout.preferredWidth: id_labelRef.font.pixelSize * 10
                 enabled: !backend.isRunning
                 text: qsTr("Settings")
-                icon.source: "qrc:/qt/qml/darhon/images/settings.png"
+                icon.source: "qrc:/darhon/images/settings.png"
                 onClicked: id_initpage.StackView.view.push(
-                               "qrc:/qt/qml/darhon/qml/settings.qml",
+                               "qrc:/darhon/qml/settings.qml",
                                StackView.Immediate)
             }
             ToolSeparator {
@@ -42,7 +42,7 @@ Page {
                 Layout.preferredWidth: id_labelRef.font.pixelSize * 10
                 enabled: !backend.isRunning
                 text: qsTr("Load")
-                icon.source: "qrc:/qt/qml/darhon/images/load.png"
+                icon.source: "qrc:/darhon/images/load.png"
                 onClicked: id_fileOpenDialog.open()
             }
             ToolButton {
@@ -50,7 +50,7 @@ Page {
                 Layout.preferredWidth: id_labelRef.font.pixelSize * 10
                 enabled: !backend.isRunning
                 text: qsTr("Save As")
-                icon.source: "qrc:/qt/qml/darhon/images/save.png"
+                icon.source: "qrc:/darhon/images/save.png"
                 onClicked: id_fileSaveDialog.open()
             }
             ToolButton {
@@ -58,7 +58,7 @@ Page {
                 Layout.preferredWidth: id_labelRef.font.pixelSize * 10
                 enabled: !backend.isRunning
                 text: qsTr("Reset")
-                icon.source: "qrc:/qt/qml/darhon/images/reset.png"
+                icon.source: "qrc:/darhon/images/reset.png"
                 onClicked: {
                     backend.resetConfiguration()
                     backend.confFileName = ""
@@ -92,7 +92,7 @@ Page {
                         Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         enabled: !backend.isRunning
                         text: qsTr("Local")
-                        icon.source: "qrc:/qt/qml/darhon/images/folder.png"
+                        icon.source: "qrc:/darhon/images/folder.png"
                         onClicked: id_folderFromDialog.open()
                     }
                     Button {
@@ -100,7 +100,7 @@ Page {
                         Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         enabled: !backend.isRunning
                         text: qsTr("Remote")
-                        icon.source: "qrc:/qt/qml/darhon/images/remote.png"
+                        icon.source: "qrc:/darhon/images/remote.png"
                         onClicked: id_sshFromDialog.open()
                     }
                     Rectangle {
@@ -138,7 +138,7 @@ Page {
                         Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         enabled: !backend.isRunning
                         text: qsTr("Local")
-                        icon.source: "qrc:/qt/qml/darhon/images/folder.png"
+                        icon.source: "qrc:/darhon/images/folder.png"
                         onClicked: id_folderToDialog.open()
                     }
                     Button {
@@ -146,7 +146,7 @@ Page {
                         Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         enabled: !backend.isRunning
                         text: qsTr("Remote")
-                        icon.source: "qrc:/qt/qml/darhon/images/remote.png"
+                        icon.source: "qrc:/darhon/images/remote.png"
                         onClicked: id_sshToDialog.open()
                     }
                     Rectangle {
@@ -194,7 +194,7 @@ Page {
                         enabled: !backend.isRunning
                         Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         text: qsTr("Run")
-                        icon.source: "qrc:/qt/qml/darhon/images/run.png"
+                        icon.source: "qrc:/darhon/images/run.png"
                         onClicked: {
                             id_textOutput.clear()
                             backend.run(id_checkRunDry.checked)
@@ -216,7 +216,7 @@ Page {
                         enabled: backend.isRunning
                         Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         text: qsTr("Cancel")
-                        icon.source: "qrc:/qt/qml/darhon/images/cancel.png"
+                        icon.source: "qrc:/darhon/images/cancel.png"
                         onClicked: backend.cancel()
                     }
                 }

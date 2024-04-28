@@ -11,8 +11,8 @@ CAbout::~CAbout() {}
 
 void CAbout::init()
 {
-    setIconAbout("qrc:/qt/qml/darhon/images/about.png");
-    setIconBack("qrc:/qt/qml/darhon/images/button-back.png");
+    setIconAbout("qrc:/darhon/images/about.png");
+    setIconBack("qrc:/darhon/images/button-back.png");
     setAppName(
         QString("%1 %2 (Qt - %3)").arg("syncBackup", qApp->applicationVersion(), QT_VERSION_STR));
     setCaption(tr("Backup and mirror your drives"));
@@ -24,8 +24,8 @@ void CAbout::init()
         + "\n\n"
         + tr("It finds files that need to be transferred using a 'quick check' algorithm "
              "that looks for files that have changed in size or in last-modified time."));
-    setIconDarhon("qrc:/qt/qml/darhon/images/darhon.png");
-    setCopyright(tr("Copyright") + " 2010-2023 - Darhon Software");
+    setIconDarhon("qrc:/darhon/images/darhon.png");
+    setCopyright(tr("Copyright") + " 2010-2024 - Darhon Software");
     setSupport(tr("Help & Support") + " - " + QCoreApplication::organizationDomain());
     setPrivacy(QString("<a href='https://darhon.com/syncbackup-privacy-policy'>%1</a>")
                    .arg(tr("Privacy Policy")));

@@ -5,9 +5,9 @@ project(syncbackup VERSION 2.1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Quick QuickControls2 LinguistTools)
+find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2 LinguistTools)
 
-qt_standard_project_setup(REQUIRES 6.5)
+qt_standard_project_setup()
 
 qt_add_executable(${PROJECT_NAME}
   main.cpp
@@ -25,7 +25,7 @@ qt_add_resources(${PROJECT_NAME} "resources"
 
 qt_add_qml_module(${PROJECT_NAME}
   URI darhon
-  VERSION 1.0
+  RESOURCE_PREFIX /
 
   QML_FILES
   qml/AboutDialog.qml

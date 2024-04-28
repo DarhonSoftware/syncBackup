@@ -12,7 +12,7 @@ ApplicationWindow {
             title: qsTr("&Menu")
             Action {
                 text: qsTr("&Command")
-                icon.source: "qrc:/qt/qml/darhon/images/command.png"
+                icon.source: "qrc:/darhon/images/command.png"
                 onTriggered: {
                     id_commandlineDialog.p_textCommand = backend.exportCommandLine()
                     id_commandlineDialog.open()
@@ -20,18 +20,18 @@ ApplicationWindow {
             }
             Action {
                 text: qsTr("&Help")
-                icon.source: "qrc:/qt/qml/darhon/images/help.png"
+                icon.source: "qrc:/darhon/images/help.png"
                 onTriggered: id_helpDialog.open()
             }
             Action {
                 text: qsTr("&About")
-                icon.source: "qrc:/qt/qml/darhon/images/about1.png"
+                icon.source: "qrc:/darhon/images/about1.png"
                 onTriggered: id_aboutDialog.open()
             }
             MenuSeparator {}
             Action {
                 text: qsTr("&Quit")
-                icon.source: "qrc:/qt/qml/darhon/images/quit.png"
+                icon.source: "qrc:/darhon/images/quit.png"
                 onTriggered: id_appWindow.close()
             }
         }
@@ -44,7 +44,7 @@ ApplicationWindow {
     StackView {
         id: id_stack
         anchors.fill: parent
-        initialItem: "qrc:/qt/qml/darhon/qml/initpage.qml"
+        initialItem: "qrc:/darhon/qml/initpage.qml"
     }
 
     AboutDialog {

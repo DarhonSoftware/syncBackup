@@ -12,7 +12,7 @@ Page {
                 id: id_buttonBack
                 Layout.preferredWidth: id_labelRef.font.pixelSize * 10
                 text: qsTr("Back")
-                icon.source: "qrc:/qt/qml/darhon/images/back.png"
+                icon.source: "qrc:/darhon/images/back.png"
                 onClicked: id_settings.StackView.view.pop(StackView.Immediate)
             }
         }
@@ -184,7 +184,7 @@ Page {
                     Button {
                         text: qsTr("Help")
                         Layout.preferredWidth: id_labelRef.font.pixelSize * 8
-                        icon.source: "qrc:/qt/qml/darhon/images/help.png"
+                        icon.source: "qrc:/darhon/images/help.png"
                         onClicked: id_ExcInclDialog.open()
                     }
                 }
@@ -205,7 +205,7 @@ Page {
                                 id: id_buttonExcInsert
                                 Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                                 text: qsTr("Insert")
-                                icon.source: "qrc:/qt/qml/darhon/images/insert.png"
+                                icon.source: "qrc:/darhon/images/insert.png"
                                 onClicked: {
                                     if (id_fieldtPath.text !== "")
                                         backend.addExclude(id_fieldtPath.text)
@@ -216,7 +216,7 @@ Page {
                                 id: id_buttonExcDelete
                                 Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                                 text: qsTr("Delete")
-                                icon.source: "qrc:/qt/qml/darhon/images/delete.png"
+                                icon.source: "qrc:/darhon/images/delete.png"
                                 onClicked: backend.removeExclude(
                                                id_listExc.currentIndex)
                             }
@@ -256,7 +256,7 @@ Page {
                                 id: id_buttonIncInsert
                                 Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                                 text: qsTr("Insert")
-                                icon.source: "qrc:/qt/qml/darhon/images/insert.png"
+                                icon.source: "qrc:/darhon/images/insert.png"
                                 onClicked: {
                                     if (id_fieldtPath.text !== "")
                                         backend.addInclude(id_fieldtPath.text)
@@ -267,7 +267,7 @@ Page {
                                 id: id_buttonIncDelete
                                 Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                                 text: qsTr("Delete")
-                                icon.source: "qrc:/qt/qml/darhon/images/delete.png"
+                                icon.source: "qrc:/darhon/images/delete.png"
                                 onClicked: backend.removeInclude(
                                                id_listInc.currentIndex)
                             }
