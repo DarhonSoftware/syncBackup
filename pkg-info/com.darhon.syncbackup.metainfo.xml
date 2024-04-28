@@ -34,7 +34,10 @@
 
   <url type="homepage">https://darhon.com/syncbackup</url>
   <url type="bugtracker">https://github.com/DarhonSoftware/syncBackup/issues</url>
-  <developer_name>Darhon Software</developer_name>
+
+  <developer id="com.darhon">
+    <name>Darhon Software</name>
+  </developer>
 
   <provides>
     <binary>syncbackup.sh</binary>
@@ -44,13 +47,6 @@
 
   <releases>
     <release version="2.1.1" date="2024-04-27"/>
-      <description>
-        <p>Upgrade to Qt6.</p>
-      </description>
-    <release version="2.0" date="2022-01-22">
-      <description>
-        <p>Major UI re-design.</p>
-      </description>
-    </release>
+    <release version="2.0.0" date="2022-01-22"/>
   </releases>
 </component>
