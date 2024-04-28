@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     //Set application names
     QCoreApplication::setOrganizationName("darhon");
     QCoreApplication::setApplicationName("syncBackup");
-    QCoreApplication::setApplicationVersion("2.1.0");
+    QCoreApplication::setApplicationVersion("2.1.1");
     QCoreApplication::setOrganizationDomain("darhon.com");
 
     //Setup translations

@@ -43,7 +43,7 @@
   <content_rating type="oars-1.0" />
 
   <releases>
-    <release version="2.1.0" date="2024-04-27"/>
+    <release version="2.1.1" date="2024-04-27"/>
       <description>
         <p>Upgrade to Qt6.</p>
       </description>
