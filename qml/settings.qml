@@ -340,7 +340,7 @@ Page {
                 }
             }
 
-            onPressed: ListView.view.currentIndex = index
+            onPressed: id_delegateExcInc1.ListView.view.currentIndex = index
             onDoubleClicked: p_editMode = true
 
             Keys.onPressed: event => {
@@ -351,10 +351,11 @@ Page {
                             }
 
             Keys.onEscapePressed: p_editMode = false
-            Keys.onUpPressed: if (ListView.view.currentIndex > 0)
-                                  ListView.view.currentIndex--
-            Keys.onDownPressed: if (ListView.view.currentIndex < ListView.view.count - 1)
-                                    ListView.view.currentIndex++
+            Keys.onUpPressed: if (id_delegateExcInc1.ListView.view.currentIndex > 0)
+                                  id_delegateExcInc1.ListView.view.currentIndex--
+            Keys.onDownPressed: if (id_delegateExcInc1.ListView.view.currentIndex
+                                        < id_delegateExcInc1.ListView.view.count - 1)
+                                    id_delegateExcInc1.ListView.view.currentIndex++
         }
     }
 

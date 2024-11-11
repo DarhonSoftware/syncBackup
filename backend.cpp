@@ -217,7 +217,7 @@ bool CBackend::saveConfiguration(const QString &sFile)
     if (!File.open(QIODevice::WriteOnly))
         return false;
     QDataStream Stream(&File);
-    Stream.setVersion(QDataStream::Qt_5_15);
+    Stream.setVersion(QDataStream::Qt_6_0);
 
     Stream << (quint32) MAGIC_FILE_MARK;
     Stream << group();
@@ -252,7 +252,7 @@ bool CBackend::loadConfiguration(const QString &sFile)
     if (!File.open(QIODevice::ReadOnly))
         return false;
     QDataStream Stream(&File);
-    Stream.setVersion(QDataStream::Qt_5_15);
+    Stream.setVersion(QDataStream::Qt_6_0);
 
     bool bAux;
     quint32 uiAux;

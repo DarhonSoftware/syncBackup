@@ -7,6 +7,8 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2 LinguistTools)
 
+qt_policy(SET QTP0004 NEW)
+
 qt_standard_project_setup()
 
 qt_add_executable(${PROJECT_NAME}
