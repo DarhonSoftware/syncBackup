@@ -40,7 +40,7 @@
   </developer>
 
   <provides>
-    <binary>syncbackup.sh</binary>
+    <binary>syncbackup</binary>
   </provides>
 
   <content_rating type="oars-1.0" />
