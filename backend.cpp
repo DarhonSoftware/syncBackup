@@ -37,7 +37,8 @@ CBackend::CBackend(QQmlApplicationEngine *pEngine)
 
     //Set environment viriable
     QProcessEnvironment Environment = QProcessEnvironment::systemEnvironment();
-    Environment.insert("SSH_ASKPASS", g_sSshAskPass);
+    Environment.insert("SSH_ASKPASS", "/app/bin/ksshaskpass");
+    Environment.insert("SSH_ASKPASS_REQUIRE", "prefer");
     m_Process.setProcessEnvironment(Environment);
 
     //Connect process to slots

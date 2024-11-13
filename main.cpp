@@ -7,26 +7,11 @@
 #include <QTranslator>
 
 CBackend *g_pBackend;
-QString g_sSshAskPass;
 
 int main(int argc, char *argv[])
 {
     //Initiate main objects
     QApplication App(argc, argv);
-
-    //Handle arguments
-    //- Default '/usr/bin/ssh-askpass'
-    g_sSshAskPass = "ssh-askpass";
-    for (int i = 0; i < argc; i++) {
-        QString s2, s1 = argv[i];
-        if (i < argc - 1) {
-            s2 = argv[i + 1];
-            if (s1 == "--ssh-askpass") {
-                g_sSshAskPass = s2;
-                i++;
-            }
-        }
-    }
 
     //Initialise modules
     QQuickStyle::setStyle("Fusion");
