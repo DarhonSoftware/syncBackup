@@ -1,4 +1,4 @@
-#include <QGuiApplication>
+#include <QApplication>
 #include <QQuickStyle>
 #include <QtQml>
 #include "backend.h"
@@ -12,7 +12,7 @@ QString g_sSshAskPass;
 int main(int argc, char *argv[])
 {
     //Initiate main objects
-    QGuiApplication App(argc, argv);
+    QApplication App(argc, argv);
 
     //Handle arguments
     //- Default '/usr/bin/ssh-askpass'

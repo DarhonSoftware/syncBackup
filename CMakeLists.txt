@@ -5,9 +5,10 @@ project(syncbackup VERSION 2.1.2 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2 LinguistTools)
+# Widget is required to provide QtQuick.Dialogs for non GTK+ platforms
+find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2 LinguistTools Widgets)
 
-qt_policy(SET QTP0004 NEW)
+#qt_policy(SET QTP0004 NEW)
 
 qt_standard_project_setup()
 
@@ -68,7 +69,7 @@ qt_add_translations(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME}
-  PRIVATE Qt6::Quick Qt6::QuickControls2
+  PRIVATE Qt6::Quick Qt6::QuickControls2 Qt6::Widgets
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES

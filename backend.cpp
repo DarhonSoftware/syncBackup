@@ -117,9 +117,9 @@ void CBackend::parseArguments(QStringList *plsArguments)
             QString("--max-size=%1%2").arg(maxSizeValue()).arg(m_lsUnits.at(unit())));
 
     if (fromPort() != "-1")
-        plsArguments->append("--rsh=ssh -p " + fromPort());
+        plsArguments->append(QString("--rsh=ssh -p %1").arg(fromPort()));
     if (toPort() != "-1")
-        plsArguments->append("--rsh=ssh -p " + toPort());
+        plsArguments->append(QString("--rsh=ssh -p %1").arg(toPort()));
 
     for (int i = 0; i < m_ModelInc.rowCount(); i++)
         plsArguments->append("--filter=+_" + m_ModelInc.item(i)->text());
