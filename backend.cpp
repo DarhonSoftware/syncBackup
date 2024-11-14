@@ -44,10 +44,7 @@ CBackend::CBackend(QQmlApplicationEngine *pEngine)
     //Connect process to slots
     connect(&m_Process, &QProcess::errorOccurred, this, &CBackend::errorProcess);
     connect(&m_Process, &QProcess::started, this, &CBackend::startedProcess);
-    connect(&m_Process,
-            QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
-            this,
-            &CBackend::finishedProcess);
+    connect(&m_Process, &QProcess::finished, this, &CBackend::finishedProcess);
     connect(&m_Process, &QProcess::readyReadStandardOutput, this, &CBackend::readProcess);
 }
 

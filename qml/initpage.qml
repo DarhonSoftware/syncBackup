@@ -15,6 +15,7 @@ Page {
                 Layout.preferredWidth: id_labelRef.font.pixelSize * 10
                 enabled: !backend.isRunning
                 text: qsTr("Settings")
+                icon.name: "document-properties"
                 icon.source: "qrc:/darhon/images/settings.png"
                 onClicked: id_initpage.StackView.view.push(
                                "qrc:/darhon/qml/settings.qml",
@@ -42,6 +43,7 @@ Page {
                 Layout.preferredWidth: id_labelRef.font.pixelSize * 10
                 enabled: !backend.isRunning
                 text: qsTr("Load")
+                icon.name: "document-open"
                 icon.source: "qrc:/darhon/images/load.png"
                 onClicked: id_fileOpenDialog.open()
             }
@@ -50,6 +52,7 @@ Page {
                 Layout.preferredWidth: id_labelRef.font.pixelSize * 10
                 enabled: !backend.isRunning
                 text: qsTr("Save As")
+                icon.name: "document-save-as"
                 icon.source: "qrc:/darhon/images/save.png"
                 onClicked: id_fileSaveDialog.open()
             }
@@ -58,6 +61,7 @@ Page {
                 Layout.preferredWidth: id_labelRef.font.pixelSize * 10
                 enabled: !backend.isRunning
                 text: qsTr("Reset")
+                icon.name: "document-revert"
                 icon.source: "qrc:/darhon/images/reset.png"
                 onClicked: {
                     backend.resetConfiguration()
@@ -92,6 +96,7 @@ Page {
                         Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         enabled: !backend.isRunning
                         text: qsTr("Local")
+                        icon.name: "folder"
                         icon.source: "qrc:/darhon/images/folder.png"
                         onClicked: id_folderFromDialog.open()
                     }
@@ -100,6 +105,7 @@ Page {
                         Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         enabled: !backend.isRunning
                         text: qsTr("Remote")
+                        icon.name: "folder-remote"
                         icon.source: "qrc:/darhon/images/remote.png"
                         onClicked: id_sshFromDialog.open()
                     }
@@ -138,6 +144,7 @@ Page {
                         Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         enabled: !backend.isRunning
                         text: qsTr("Local")
+                        icon.name: "folder"
                         icon.source: "qrc:/darhon/images/folder.png"
                         onClicked: id_folderToDialog.open()
                     }
@@ -146,6 +153,7 @@ Page {
                         Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         enabled: !backend.isRunning
                         text: qsTr("Remote")
+                        icon.name: "folder-remote"
                         icon.source: "qrc:/darhon/images/remote.png"
                         onClicked: id_sshToDialog.open()
                     }
@@ -194,6 +202,7 @@ Page {
                         enabled: !backend.isRunning
                         Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         text: qsTr("Run")
+                        icon.name: "system-run"
                         icon.source: "qrc:/darhon/images/run.png"
                         onClicked: {
                             id_textOutput.clear()
@@ -216,6 +225,7 @@ Page {
                         enabled: backend.isRunning
                         Layout.preferredWidth: id_labelRef.font.pixelSize * 8
                         text: qsTr("Cancel")
+                        icon.name: "process-stop"
                         icon.source: "qrc:/darhon/images/cancel.png"
                         onClicked: backend.cancel()
                     }
@@ -375,7 +385,6 @@ Page {
         id: id_messageDialog
         title: qsTr("Information")
         buttons: MessageDialog.Ok
-        //        icon: StandardIcon.Information
     }
 
     Connections {
