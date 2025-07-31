@@ -221,8 +221,7 @@ Page {
                                 text: qsTr("Delete")
                                 icon.name: "list-remove"
                                 icon.source: "qrc:/darhon/images/delete.png"
-                                onClicked: backend.removeExclude(
-                                               id_listExc.currentIndex)
+                                onClicked: backend.removeExclude(id_listExc.currentIndex)
                             }
                         }
 
@@ -274,8 +273,7 @@ Page {
                                 text: qsTr("Delete")
                                 icon.name: "list-remove"
                                 icon.source: "qrc:/darhon/images/delete.png"
-                                onClicked: backend.removeInclude(
-                                               id_listInc.currentIndex)
+                                onClicked: backend.removeInclude(id_listInc.currentIndex)
                             }
                         }
 
@@ -359,8 +357,7 @@ Page {
             Keys.onEscapePressed: p_editMode = false
             Keys.onUpPressed: if (id_delegateExcInc1.ListView.view.currentIndex > 0)
                                   id_delegateExcInc1.ListView.view.currentIndex--
-            Keys.onDownPressed: if (id_delegateExcInc1.ListView.view.currentIndex
-                                        < id_delegateExcInc1.ListView.view.count - 1)
+            Keys.onDownPressed: if (id_delegateExcInc1.ListView.view.currentIndex < id_delegateExcInc1.ListView.view.count - 1)
                                     id_delegateExcInc1.ListView.view.currentIndex++
         }
     }

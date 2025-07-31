@@ -30,12 +30,7 @@ int main(int argc, char *argv[])
 
     //Initiate Engine
     QQmlApplicationEngine Engine;
-    QObject::connect(
-        &Engine,
-        &QQmlApplicationEngine::objectCreationFailed,
-        &App,
-        []() { return QCoreApplication::exit(-1); },
-        Qt::QueuedConnection);
+    QObject::connect(&Engine, &QQmlApplicationEngine::objectCreationFailed, &App, []() { return QCoreApplication::exit(-1); }, Qt::QueuedConnection);
 
     //Initiate global objects
     g_pBackend = new CBackend(&Engine);

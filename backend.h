@@ -19,26 +19,20 @@ class CBackend : public QObject
     Q_PROPERTY(bool links READ links WRITE setLinks NOTIFY linksChanged)
     Q_PROPERTY(bool update READ update WRITE setUpdate NOTIFY updateChanged)
     Q_PROPERTY(bool del READ del WRITE setDel NOTIFY delChanged)
-    Q_PROPERTY(bool deleteExcluded READ deleteExcluded WRITE setDeleteExcluded NOTIFY
-                   deleteExcludedChanged)
-    Q_PROPERTY(bool ignoreNonExisting READ ignoreNonExisting WRITE setIgnoreNonExisting NOTIFY
-                   ignoreNonExistingChanged)
-    Q_PROPERTY(bool ignoreExisting READ ignoreExisting WRITE setIgnoreExisting NOTIFY
-                   ignoreExistingChanged)
+    Q_PROPERTY(bool deleteExcluded READ deleteExcluded WRITE setDeleteExcluded NOTIFY deleteExcludedChanged)
+    Q_PROPERTY(bool ignoreNonExisting READ ignoreNonExisting WRITE setIgnoreNonExisting NOTIFY ignoreNonExistingChanged)
+    Q_PROPERTY(bool ignoreExisting READ ignoreExisting WRITE setIgnoreExisting NOTIFY ignoreExistingChanged)
     Q_PROPERTY(bool recursive READ recursive WRITE setRecursive NOTIFY recursiveChanged)
     Q_PROPERTY(bool maxSize READ maxSize WRITE setMaxSize NOTIFY maxSizeChanged)
-    Q_PROPERTY(
-        quint32 maxSizeValue READ maxSizeValue WRITE setMaxSizeValue NOTIFY maxSizeValueChanged)
+    Q_PROPERTY(quint32 maxSizeValue READ maxSizeValue WRITE setMaxSizeValue NOTIFY maxSizeValueChanged)
     Q_PROPERTY(quint32 unit READ unit WRITE setUnit NOTIFY unitChanged)
     Q_PROPERTY(QString from READ from WRITE setFrom NOTIFY fromChanged)
     Q_PROPERTY(QString to READ to WRITE setTo NOTIFY toChanged)
     Q_PROPERTY(QString fromPort READ fromPort WRITE setFromPort NOTIFY fromPortChanged)
     Q_PROPERTY(QString toPort READ toPort WRITE setToPort NOTIFY toPortChanged)
 
-    Q_PROPERTY(
-        QString confFileName READ confFileName WRITE setConfFileName NOTIFY confFileNameChanged)
-    Q_PROPERTY(
-        QString errorMessage READ errorMessage WRITE setErrorMessage NOTIFY errorMessageChanged)
+    Q_PROPERTY(QString confFileName READ confFileName WRITE setConfFileName NOTIFY confFileNameChanged)
+    Q_PROPERTY(QString errorMessage READ errorMessage WRITE setErrorMessage NOTIFY errorMessageChanged)
     Q_PROPERTY(bool isRunning READ isRunning WRITE setIsRunning NOTIFY isRunningChanged)
     Q_PROPERTY(QString excIncHelp READ excIncHelp WRITE setExcIncHelp NOTIFY excIncHelpChanged)
     Q_PROPERTY(QString help READ help WRITE setHelp NOTIFY helpChanged)

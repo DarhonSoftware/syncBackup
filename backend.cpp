@@ -111,8 +111,7 @@ void CBackend::parseArguments(QStringList *plsArguments)
     if (recursive())
         plsArguments->append("--recursive");
     if (maxSize())
-        plsArguments->append(
-            QString("--max-size=%1%2").arg(maxSizeValue()).arg(m_lsUnits.at(unit())));
+        plsArguments->append(QString("--max-size=%1%2").arg(maxSizeValue()).arg(m_lsUnits.at(unit())));
 
     if (fromPort() != "-1")
         plsArguments->append(QString("--rsh=ssh -p %1").arg(fromPort()));
@@ -137,9 +136,8 @@ bool CBackend::run(bool bDryRun)
     //Validate
     QDir Dir;
     if ((from().isEmpty()) || (to().isEmpty()) || ((!Dir.exists(from())) && (!Dir.exists(to())))) {
-        setErrorMessage(tr("You have one of the following problems with the source/destination:")
-                        + "\n - " + tr("The source or destination path is empty.") + "\n - "
-                        + tr("One of the directories does not exist.") + "\n - "
+        setErrorMessage(tr("You have one of the following problems with the source/destination:") + "\n - "
+                        + tr("The source or destination path is empty.") + "\n - " + tr("One of the directories does not exist.") + "\n - "
                         + tr("Source and destination are ssh remote."));
         return false;
     }
@@ -355,8 +353,7 @@ void CBackend::removeExclude(int iRow)
 
 void CBackend::errorProcess(QProcess::ProcessError iError)
 {
-    emit processOutput(
-        QString("\n" + tr("ERROR [%1] REPORTED BY THE BACKEND DURING EXCECUTION")).arg(iError));
+    emit processOutput(QString("\n" + tr("ERROR [%1] REPORTED BY THE BACKEND DURING EXCECUTION")).arg(iError));
     emit processOutput(m_Process.readAllStandardError());
     setIsRunning(false);
 }
@@ -373,8 +370,7 @@ void CBackend::finishedProcess(int iExitCode, QProcess::ExitStatus iExitStatus)
     }
 
     if (iExitCode != 0) {
-        emit processOutput(
-            QString("\n" + tr("ERROR [%1] REPORTED BY THE BACKEND AT EXIT")).arg(iExitCode));
+        emit processOutput(QString("\n" + tr("ERROR [%1] REPORTED BY THE BACKEND AT EXIT")).arg(iExitCode));
         emit processOutput(m_Process.readAllStandardError());
     }
     setIsRunning(false);

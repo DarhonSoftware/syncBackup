@@ -17,18 +17,13 @@ void CMainWindow::init()
 {
     //Set default paramenters
     QSize SizeScreen = QGuiApplication::primaryScreen()->availableSize();
-    QSize SizeApp(static_cast<int>(SizeScreen.width() * 0.8),
-                  static_cast<int>(SizeScreen.height() * 0.7));
+    QSize SizeApp(static_cast<int>(SizeScreen.width() * 0.8), static_cast<int>(SizeScreen.height() * 0.7));
 
     //Load saved paramters
     QSettings Settings;
     Settings.beginGroup("Geometry");
     QSize Size = Settings.value("size", SizeApp).toSize();
-    QPoint Point = Settings
-                       .value("pos",
-                              QPoint((SizeScreen.width() - SizeApp.width()) / 2,
-                                     (SizeScreen.height() - SizeApp.height()) / 2))
-                       .toPoint();
+    QPoint Point = Settings.value("pos", QPoint((SizeScreen.width() - SizeApp.width()) / 2, (SizeScreen.height() - SizeApp.height()) / 2)).toPoint();
     Settings.endGroup();
 
     //Set properties
