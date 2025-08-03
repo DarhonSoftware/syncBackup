@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
     //Setup translations
     QTranslator Translator;
-    if (Translator.load(QLocale(), "syncbackup", "_", ":/i18n")) {
+    if (Translator.load(QLocale(), "syncBackup", "_", ":/i18n")) {
         App.installTranslator(&Translator);
     }
 

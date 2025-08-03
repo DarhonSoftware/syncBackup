@@ -1,8 +1,7 @@
 cmake_minimum_required(VERSION 3.22)
 
-project(syncbackup VERSION 2.1.4 LANGUAGES CXX)
+project(syncBackup VERSION 2.1.4 LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 # Widget is required to provide QtQuick.Dialogs for non GTK+ platforms
@@ -10,7 +9,10 @@ find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2 LinguistTools Widgets)
 
 #qt_policy(SET QTP0004 NEW)
 
-qt_standard_project_setup()
+qt_standard_project_setup(
+  I18N_SOURCE_LANGUAGE en
+  I18N_TRANSLATED_LANGUAGES es
+)
 
 qt_add_executable(${PROJECT_NAME}
   main.cpp
@@ -64,7 +66,6 @@ qt_add_qml_module(${PROJECT_NAME}
 # To update the entries in the .ts file, build the update_translations target:
 # <build-dir>$ cmake --build . --target update_translations
 qt_add_translations(${PROJECT_NAME}
-  TS_FILES syncbackup_es.ts syncbackup_en.ts
   LUPDATE_OPTIONS -no-obsolete
 )
 
