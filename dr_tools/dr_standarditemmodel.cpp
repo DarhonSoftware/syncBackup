@@ -1,6 +1,5 @@
-//Release 2
+//Release 3
 #include "dr_standarditemmodel.h"
-#include <QtGui>
 
 CStandardItemModel::CStandardItemModel(QObject *pObject)
     : QStandardItemModel(pObject)

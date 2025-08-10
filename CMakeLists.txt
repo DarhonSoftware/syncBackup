@@ -15,11 +15,11 @@ qt_standard_project_setup(
 )
 
 qt_add_executable(${PROJECT_NAME}
+  dr_tools/dr_standarditemmodel.cpp
   main.cpp
   backend.cpp
   about.cpp
   mainwindow.cpp
-  dr_standarditemmodel.cpp
 )
 
 qt_add_resources(${PROJECT_NAME} "resources"
