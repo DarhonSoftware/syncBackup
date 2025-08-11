@@ -12,13 +12,13 @@
 <context>
     <name>CAbout</name>
     <message>
-        <location filename="about.cpp" line="+18"/>
+        <location filename="about.cpp" line="+17"/>
         <source>Backup and mirror your drives</source>
         <oldsource>Front-end of rsync for backup and mirroring purposes</oldsource>
         <translation>Respalda y replica tus discos</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+1"/>
         <source>It offers the most common options getting most of the power from rsync.</source>
         <translation>Ofrece las opciones más comunes de la herramienta rsync.</translation>
     </message>
@@ -43,7 +43,7 @@
         <translation>Ayuda y Soporte</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+1"/>
         <source>Privacy Policy</source>
         <translation>Politica de privacidad</translation>
     </message>
@@ -51,7 +51,7 @@
 <context>
     <name>CBackend</name>
     <message>
-        <location filename="backend.cpp" line="+142"/>
+        <location filename="backend.cpp" line="+139"/>
         <source>You have one of the following problems with the source/destination:</source>
         <translation>Hay uno de los siguientes problemas con la fuente/destino:</translation>
     </message>
@@ -61,7 +61,7 @@
         <translation>El directorio de la fuente o destino está vacío.</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+0"/>
         <source>One of the directories does not exist.</source>
         <translation>Uno de los directorios no existe.</translation>
     </message>
@@ -76,7 +76,7 @@
         <translation>-no-archivo-</translation>
     </message>
     <message>
-        <location line="+176"/>
+        <location line="+175"/>
         <source>ERROR [%1] REPORTED BY THE BACKEND DURING EXCECUTION</source>
         <translation>ERROR [%1] REPORTADO DURANTE LA EXECUCIÓN</translation>
     </message>
@@ -86,7 +86,7 @@
         <translation>PROBLEMAS CON LA HERRAMIENTA</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source>ERROR [%1] REPORTED BY THE BACKEND AT EXIT</source>
         <translation>ERROR [%1] REPORTADO POR LA HERRAMIENTA AL TERMINAR</translation>
     </message>
@@ -151,39 +151,39 @@
         <translation>Configuración</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+28"/>
         <source>Load</source>
         <translation>Cargar</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Save As</source>
         <translation>Salvar Como</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Reset</source>
         <translation>Resetear</translation>
     </message>
     <message>
-        <location line="+34"/>
-        <location line="+46"/>
+        <location line="+35"/>
+        <location line="+48"/>
         <source>Local</source>
         <translation>Local</translation>
     </message>
     <message>
-        <location line="-38"/>
-        <location line="+46"/>
+        <location line="-39"/>
+        <location line="+48"/>
         <source>Remote</source>
         <translation>Remoto</translation>
     </message>
     <message>
-        <location line="-32"/>
+        <location line="-33"/>
         <source>SOURCE</source>
         <translation>FUENTE</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+48"/>
         <source>DESTINATION</source>
         <translation>DESTINO</translation>
     </message>
@@ -193,7 +193,7 @@
         <translation>Ejecutar</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+11"/>
         <source>Run the process as a trial without making changes</source>
         <translation>Ejecutar el proceso en modo de prueba sin hacer cambios</translation>
     </message>
@@ -203,7 +203,7 @@
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+15"/>
         <source>WARNINGS in current configuration</source>
         <translation>ATENCIÓN con la configuración seleccionada</translation>
     </message>
@@ -271,22 +271,22 @@
         <translation>&amp;Instrucción</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>&amp;Help</source>
         <translation>&amp;Ayuda</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+6"/>
         <source>&amp;About</source>
         <translation>&amp;Acerca</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+7"/>
         <source>&amp;Quit</source>
         <translation>&amp;Salir</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+24"/>
         <source>Alert</source>
         <translation>Alerta</translation>
     </message>
@@ -304,7 +304,7 @@
         <translation>Atrás</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+30"/>
         <source>Configure files in destination</source>
         <translation>Configuración de archivos en el destino</translation>
     </message>
@@ -389,24 +389,24 @@
         <translation>Ayuda</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+17"/>
         <source>EXCLUDED</source>
         <translation>EXCLUIDOS</translation>
     </message>
     <message>
         <location line="+6"/>
-        <location line="+51"/>
+        <location line="+52"/>
         <source>Insert</source>
         <translation>Insertar</translation>
     </message>
     <message>
         <location line="-40"/>
-        <location line="+51"/>
+        <location line="+52"/>
         <source>Delete</source>
         <translation>Borrar</translation>
     </message>
     <message>
-        <location line="-17"/>
+        <location line="-18"/>
         <source>INCLUDED</source>
         <translation>INCLUIDOS</translation>
     </message>
