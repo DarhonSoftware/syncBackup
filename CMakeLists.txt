@@ -14,8 +14,9 @@ qt_standard_project_setup(
   I18N_TRANSLATED_LANGUAGES es
 )
 
+add_subdirectory(dr_tools)
+
 qt_add_executable(${PROJECT_NAME}
-  dr_tools/dr_standarditemmodel.cpp
   main.cpp
   backend.cpp
   about.cpp
@@ -70,7 +71,7 @@ qt_add_translations(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME}
-  PRIVATE Qt6::Quick Qt6::QuickControls2 Qt6::Widgets
+  PRIVATE DarhonTools Qt6::Quick Qt6::QuickControls2 Qt6::Widgets
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
