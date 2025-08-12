@@ -5,7 +5,7 @@
 #include <QProcess>
 #include <QQmlApplicationEngine>
 #include <QStringListModel>
-#include "dr_tools/dr_standarditemmodel.h"
+#include "darhon.tools/dr_standarditemmodel.h"
 
 class QCloseEvent;
 

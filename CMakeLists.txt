@@ -14,7 +14,7 @@ qt_standard_project_setup(
   I18N_TRANSLATED_LANGUAGES es
 )
 
-add_subdirectory(dr_tools)
+add_subdirectory(darhon.tools)
 
 qt_add_executable(${PROJECT_NAME}
   main.cpp
