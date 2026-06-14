@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.22)
 
-project(syncBackup VERSION 2.1.4 LANGUAGES CXX)
+project(syncBackup VERSION 2.1.5 LANGUAGES CXX)
 
 # Widget is required to provide QtQuick.Dialogs for non GTK+ platforms
 find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2 LinguistTools Widgets)
